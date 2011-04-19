@@ -10,3 +10,6 @@
 [submodule "bundle/snipmate"]
 	path = bundle/snipmate
 	url = https://github.com/akitaonrails/snipmate.vim.git
+[submodule "snippets"]
+	path = snippets
+	url = c:/Documents and Settings/msvec/vim-snippets
