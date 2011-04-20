@@ -13,3 +13,6 @@
 [submodule "snippets"]
 	path = snippets
 	url = https://github.com/triglav/vim-snippets.git
+[submodule "bundle/nerd-commenter"]
+	path = bundle/nerd-commenter
+	url = https://github.com/scrooloose/nerdcommenter.git
