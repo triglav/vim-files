@@ -19,3 +19,6 @@
 [submodule "bundle/surround"]
 	path = bundle/surround
 	url = https://github.com/tpope/vim-surround.git
+[submodule "bundle/visual-increment"]
+	path = bundle/visual-increment
+	url = https://github.com/triglav/vim-visual-increment.git
