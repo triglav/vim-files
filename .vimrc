@@ -565,3 +565,10 @@ command SnippetsReload call ReloadAllSnippets()
 autocmd BufWritePost *.snippets call ReloadAllSnippets()
 
 
+" PLUGIN surround {{{1
+
+
+" Don't be annoying in visual mode please!!
+xmap <Leader>s <Plug>Vsurround
+
+
