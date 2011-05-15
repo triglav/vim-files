@@ -204,6 +204,37 @@ set cinoptions=:0g0U1
 set printoptions=paper:a4,wrap:y,syntax:n,formfeed:y
 
 
+" FILE {{{1
+
+
+" To overrule the automatic choice of the language.
+let $LANG='en'
+" Sets the character encoding used inside Vim.
+set encoding=utf-8
+" This is a list of character encodings considered when starting to edit a
+" file.
+set fileencodings=utf-8,iso-8859-2
+" The character encoding used when printing.
+set printencoding=utf-8
+" This gives the <NL> of the current buffer, which is used for reading/writing
+" the buffer from/to a file.
+set fileformat=unix
+" This gives the end-of-line (<EOL>) formats that will be tried.
+" dos   <CR> <NL>
+" unix  <NL>
+set fileformats=unix,dos
+
+
+" This switches on filetype detection, using filetype plugin files, using
+" indent files.
+filetype plugin indent on
+
+
+" When a file has been detected to have been changed outside of Vim and it has
+" not been changed inside of Vim, automatically read it again.
+set autoread
+
+
 " EDIT {{{1
 
 
@@ -255,7 +286,7 @@ set textwidth=80
 set nrformats=alpha,octal,hex
 
 " Show trailing whitespace characters.
-set listchars=precedes:<,extends:>,trail:_,tab:/-
+set listchars=tab:▸\ ,trail:_
 set list
 
 " When completing a word in insert mode from the tags file, show both the tag
@@ -358,37 +389,6 @@ endif
 "             so that you can make a session for each tab page separately
 " "winsize"   window sizes
 set sessionoptions=blank,curdir,folds,globals,help,options,tabpages,winsize
-
-
-" FILE {{{1
-
-
-" To overrule the automatic choice of the language.
-let $LANG='en'
-" Sets the character encoding used inside Vim.
-set encoding=utf-8
-" This is a list of character encodings considered when starting to edit a
-" file.
-set fileencodings=utf-8,iso-8859-2
-" The character encoding used when printing.
-set printencoding=utf-8
-" This gives the <NL> of the current buffer, which is used for reading/writing
-" the buffer from/to a file.
-set fileformat=unix
-" This gives the end-of-line (<EOL>) formats that will be tried.
-" dos   <CR> <NL>
-" unix  <NL>
-set fileformats=unix,dos
-
-
-" This switches on filetype detection, using filetype plugin files, using
-" indent files.
-filetype plugin indent on
-
-
-" When a file has been detected to have been changed outside of Vim and it has
-" not been changed inside of Vim, automatically read it again.
-set autoread
 
 
 " PATH {{{1
@@ -528,7 +528,8 @@ nnoremap <Leader>n :NERDTreeToggle<CR>
 nnoremap <Leader>m :BufExplorer<CR>
 " Easily change directory to the file being edited.
 nmap <Leader>cd :cd %:p:h<CR>
-
+" Easy toggle list
+nnoremap <Leader>l :set list!<CR>
 
 
 " CUSTOM ABBREVIATIONS {{{1
