@@ -190,6 +190,8 @@ endif
 syntax on
 " Load color scheme.
 set background=dark
+let g:solarized_termcolors=256
+let g:solarized_visibility="high"
 colorscheme solarized
 
 " The 'cinoptions' affect the way 'cindent' reindents lines in a C program.
