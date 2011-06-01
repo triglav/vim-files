@@ -504,7 +504,7 @@ nnoremap <return> :noh<return><esc><return>
 nnoremap Y y$
 
 " Toggle pastemode easily in insert and command mode.
-set pastetoggle=<F2>
+set pastetoggle=<F12>
 " Always disable paste mode when leaving insert mode.
 autocmd InsertLeave * set nopaste
 
