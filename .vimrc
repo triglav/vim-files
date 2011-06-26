@@ -288,7 +288,7 @@ set textwidth=80
 set nrformats=alpha,octal,hex
 
 " Show trailing whitespace characters.
-set listchars=tab:▸\ ,trail:_
+set listchars=tab:>-,trail:_
 set list
 
 " When completing a word in insert mode from the tags file, show both the tag
