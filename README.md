@@ -29,3 +29,15 @@ Generate Vim doc tags:
 * use `~/vimfiles` instead of `~/.vim`
 * create rather a hard link (without the `-s` flag) instead
 
+## Custom commands
+
+This config contains a couple of very useful commands:
+
+* `<leader>W` Strips all trailing whitespace in the current file.
+* `<leader>v` Reselects the text that was just pasted.
+* `<Leader>r` Forces vim screen redraw.
+* `<Leader>n` Opens the _NERD Tree_ plugin window.
+* `<Leader>m` Opens _Buf Explorer_ plugin window.
+* `<Leader>cd` Changes the current directory to the file being edited.
+* `<Leader>l` Toggles _list_ display
+
