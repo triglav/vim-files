@@ -6,8 +6,21 @@ version 7.3
 " This option has the effect of making Vim behave in a more useful way.
 set nocompatible
 
+
 " Append all the plugins in the "bundle" directory.
 call pathogen#runtime_append_all_bundles()
+
+
+" PERSONAL (MODIFY THIS) {{{1
+
+
+" Tab size
+let tab_size = 2
+" Leader mappings
+let mapleader = ","
+let maplocalleader = ";"
+" Author that shows up in some of the snippets
+let g:snips_author = 'Triglav <trojhlav@gmail.com>'
 
 
 " INTERFACE {{{1
@@ -255,9 +268,9 @@ set nojoinspaces
 " Use the appropriate number of spaces to insert a <Tab>.
 set expandtab
 " Number of spaces that a <Tab> in the file counts for.
-set tabstop=2
+let &tabstop=tab_size
 " Number of spaces to use for each step of (auto)indent.
-set shiftwidth=2
+let &shiftwidth=tab_size
 " Round indent to multiple of 'shiftwidth'.  Applies to > and < commands.
 set shiftround
 
@@ -452,11 +465,6 @@ endif
 " CUSTOM KEY REMAPPING {{{1
 
 
-" Leader mappings
-let mapleader = ","
-let maplocalleader = ";"
-
-
 " Move by screen lines instead of file line.
 nnoremap j gj
 nnoremap k gk
@@ -559,8 +567,6 @@ cnoreabbrev WA wa
 
 " PLUGIN snipMate {{{1
 
-
-let g:snips_author = 'Triglav <trojhlav@gmail.com>'
 
 " Command for reloading snipMate snippets
 command SnippetsReload call ReloadAllSnippets()
