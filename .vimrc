@@ -324,7 +324,7 @@ set visualbell
 if has('win32')
   " Name of the shell to use for ! and :! commands.
   "set shell=c:\cygwin\bin\bash.exe\ --login
-  set shell=cmd.exe
+  let &shell=$COMSPEC
   " Always use the shell.
   " Use "shell 'shellcmdflag' cmd" to start external commands.
   set shelltype=0
@@ -417,7 +417,7 @@ if has('win32')
   " This is a list of directories which will be searched when using the |gf|,
   " [f, ]f, ^Wf, |:find| and other commands, provided that the file being
   " searched for has a relative path
-  set path=.,c:/dev/mingw/include
+  set path=.,$MINGW/include
 elseif has('unix')
   " This is a list of directories which will be searched when using the |gf|,
   " [f, ]f, ^Wf, |:find| and other commands, provided that the file being
