@@ -469,6 +469,12 @@ endif
 nnoremap <silent> j gj
 nnoremap <silent> k gk
 
+" Indent with tab also and keep the selection active
+vnoremap <silent> <tab> >gv
+vnoremap <silent> <s-tab> <gv
+vnoremap <silent> > >gv
+vnoremap <silent> < <gv
+
 " Keys for switching between buffers in normal mode.
 map <A-1> :tabn 1<CR>
 map <A-2> :tabn 2<CR>
