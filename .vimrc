@@ -466,13 +466,8 @@ endif
 
 
 " Move by screen lines instead of file line.
-nnoremap j gj
-nnoremap k gk
-
-" ,h for line start
-map <Leader>h 0
-" ,l for line end
-map <Leader>l $
+nnoremap <silent> j gj
+nnoremap <silent> k gk
 
 " Keys for switching between buffers in normal mode.
 map <A-1> :tabn 1<CR>
