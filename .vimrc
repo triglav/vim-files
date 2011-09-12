@@ -541,6 +541,8 @@ nnoremap <Leader>m :BufExplorer<CR>
 nmap <Leader>cd :cd %:p:h<CR>
 " Easy toggle list
 nnoremap <Leader>l :set list!<CR>
+" Open new tab
+nnoremap <Leader>t <ESC>:tabnew<CR>
 
 
 " CUSTOM ABBREVIATIONS {{{1
