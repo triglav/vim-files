@@ -575,6 +575,13 @@ command SnippetsReload call ReloadAllSnippets()
 autocmd BufWritePost *.snippets call ReloadAllSnippets()
 
 
+" PLUGIN NERD Tree {{{1
+
+
+" The NERD tree window will close after opening a file
+let NERDTreeQuitOnOpen = 1
+
+
 " PLUGIN surround {{{1
 
 
