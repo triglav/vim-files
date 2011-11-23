@@ -70,7 +70,11 @@ if has('gui_running')
     " Number of columns of the screen. (78 + 8 + 4)
     set columns=999
     " Set fonts.
-    set guifont=Inconsolata\ Medium\ 13
+    if has('mac')
+      set guifont=Monaco:h14
+    else
+      set guifont=Inconsolata\ Medium\ 13
+    endif
   endif
   " Number of pixel lines inserted between characters.
   set linespace=2
