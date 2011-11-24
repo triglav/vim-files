@@ -478,30 +478,56 @@ vnoremap <silent> > >gv
 vnoremap <silent> < <gv
 
 " Keys for switching between buffers in normal mode.
-map <A-1> :tabn 1<CR>
-map <A-2> :tabn 2<CR>
-map <A-3> :tabn 3<CR>
-map <A-4> :tabn 4<CR>
-map <A-5> :tabn 5<CR>
-map <A-6> :tabn 6<CR>
-map <A-7> :tabn 7<CR>
-map <A-8> :tabn 8<CR>
-map <A-9> :tabn 9<CR>
-map <A-0> :tabn 10<CR>
+if has('mac')
+  map <D-1> :tabn 1<CR>
+  map <D-2> :tabn 2<CR>
+  map <D-3> :tabn 3<CR>
+  map <D-4> :tabn 4<CR>
+  map <D-5> :tabn 5<CR>
+  map <D-6> :tabn 6<CR>
+  map <D-7> :tabn 7<CR>
+  map <D-8> :tabn 8<CR>
+  map <D-9> :tabn 9<CR>
+  map <D-0> :tabn 10<CR>
+else
+  map <A-1> :tabn 1<CR>
+  map <A-2> :tabn 2<CR>
+  map <A-3> :tabn 3<CR>
+  map <A-4> :tabn 4<CR>
+  map <A-5> :tabn 5<CR>
+  map <A-6> :tabn 6<CR>
+  map <A-7> :tabn 7<CR>
+  map <A-8> :tabn 8<CR>
+  map <A-9> :tabn 9<CR>
+  map <A-0> :tabn 10<CR>
+endif
 map <C-Tab> :tabn<CR>
 map <S-C-Tab> :tabp<CR>
 
 " Keys for switching between buffers in insert mode.
-imap <A-1> <Esc>:tabn 1<CR>
-imap <A-2> <Esc>:tabn 2<CR>
-imap <A-3> <Esc>:tabn 3<CR>
-imap <A-4> <Esc>:tabn 4<CR>
-imap <A-5> <Esc>:tabn 5<CR>
-imap <A-6> <Esc>:tabn 6<CR>
-imap <A-7> <Esc>:tabn 7<CR>
-imap <A-8> <Esc>:tabn 8<CR>
-imap <A-9> <Esc>:tabn 9<CR>
-imap <A-0> <Esc>:tabn 10<CR>
+if has('mac')
+  imap <D-1> <Esc>:tabn 1<CR>
+  imap <D-2> <Esc>:tabn 2<CR>
+  imap <D-3> <Esc>:tabn 3<CR>
+  imap <D-4> <Esc>:tabn 4<CR>
+  imap <D-5> <Esc>:tabn 5<CR>
+  imap <D-6> <Esc>:tabn 6<CR>
+  imap <D-7> <Esc>:tabn 7<CR>
+  imap <D-8> <Esc>:tabn 8<CR>
+  imap <D-9> <Esc>:tabn 9<CR>
+  imap <D-0> <Esc>:tabn 10<CR>
+else
+  imap <A-1> <Esc>:tabn 1<CR>
+  imap <A-2> <Esc>:tabn 2<CR>
+  imap <A-3> <Esc>:tabn 3<CR>
+  imap <A-4> <Esc>:tabn 4<CR>
+  imap <A-5> <Esc>:tabn 5<CR>
+  imap <A-6> <Esc>:tabn 6<CR>
+  imap <A-7> <Esc>:tabn 7<CR>
+  imap <A-8> <Esc>:tabn 8<CR>
+  imap <A-9> <Esc>:tabn 9<CR>
+  imap <A-0> <Esc>:tabn 10<CR>
+endif
 imap <C-Tab> <Esc>:tabn<CR>
 imap <S-C-Tab> <Esc>:tabp<CR>
 
