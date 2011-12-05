@@ -471,6 +471,11 @@ endif
 " CUSTOM KEY REMAPPING {{{1
 
 
+" Remove the annoying F1 help bind
+nnoremap <F1> <Esc>
+inoremap <F1> <Esc>
+vnoremap <F1> <Esc>
+
 " Move by screen lines instead of file line.
 nnoremap <silent> j gj
 nnoremap <silent> k gk
