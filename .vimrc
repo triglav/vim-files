@@ -83,6 +83,10 @@ if has('gui_running')
   " 'g' Grey menu items: Make menu items that are not active grey.
   " 'p' Use Pointer callbacks for X11 GUI.
   set guioptions=cigp
+  " Draw tabs via Cocoa in Macvim
+  if has('mac')
+    set guioptions+=e
+  endif
   " Settings for console version.
 else
   " Disable the recognition of special key codes in |<>| form in mappings,
