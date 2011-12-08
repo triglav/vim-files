@@ -71,7 +71,9 @@ if has('gui_running')
     set columns=999
     " Set fonts.
     if has('mac')
-      set guifont=Monaco:h14
+      " Get the fonts here:
+      " http://ftp.gnome.org/pub/GNOME/sources/ttf-bitstream-vera/1.10/
+      set guifont=Bitstream\ Vera\ Sans\ Mono:h14
     else
       set guifont=Inconsolata\ Medium\ 13
     endif
