@@ -1,30 +1,40 @@
 [submodule "bundle/nerd-tree"]
 	path = bundle/nerd-tree
 	url = https://github.com/scrooloose/nerdtree.git
+	ignore = all
 [submodule "bundle/bufexplorer"]
 	path = bundle/bufexplorer
 	url = https://github.com/vim-scripts/bufexplorer.zip.git
+	ignore = all
 [submodule "bundle/snipmate"]
 	path = bundle/snipmate
 	url = https://github.com/akitaonrails/snipmate.vim.git
+	ignore = all
 [submodule "snippets"]
 	path = snippets
 	url = https://github.com/triglav/vim-snippets.git
+	ignore = all
 [submodule "bundle/nerd-commenter"]
 	path = bundle/nerd-commenter
 	url = https://github.com/scrooloose/nerdcommenter.git
+	ignore = all
 [submodule "bundle/surround"]
 	path = bundle/surround
 	url = https://github.com/tpope/vim-surround.git
+	ignore = all
 [submodule "bundle/visual-increment"]
 	path = bundle/visual-increment
 	url = https://github.com/triglav/vim-visual-increment.git
+	ignore = all
 [submodule "bundle/git"]
 	path = bundle/git
 	url = https://github.com/tpope/vim-git.git
+	ignore = all
 [submodule "bundle/glsl"]
 	path = bundle/glsl
 	url = https://github.com/Nemo157/glsl.vim.git
+	ignore = all
 [submodule "bundle/rails"]
 	path = bundle/rails
 	url = https://github.com/tpope/vim-rails.git
+	ignore = all
