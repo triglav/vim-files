@@ -29,6 +29,12 @@ Generate Vim doc tags:
 * use `~/vimfiles` instead of `~/.vim`
 * create rather a hard link (without the `-s` flag) instead
 
+### Mac OS X
+
+I am using _Bitstream Vera Sans Mono_ fonts on Mac.
+
+You can get them for free at: http://ftp.gnome.org/pub/GNOME/sources/ttf-bitstream-vera/1.10/
+
 ## Custom commands
 
 This config contains a couple of very useful commands:
