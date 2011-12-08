@@ -25,3 +25,6 @@
 [submodule "bundle/glsl"]
 	path = bundle/glsl
 	url = https://github.com/Nemo157/glsl.vim.git
+[submodule "bundle/rails"]
+	path = bundle/rails
+	url = https://github.com/tpope/vim-rails.git
