@@ -30,7 +30,7 @@ let g:snips_author = 'Triglav <trojhlav@gmail.com>'
 set laststatus=2
 if has("statusline")
   " This option determines the content of the status line.
-  set statusline=%n:\ %<%f\ %y%m%r\ %k%=[%b,0x%B]\ \ %l/%L,%c%V\ \ %P
+  set statusline=%n:\ %<%f\ %y%m%r%{fugitive#statusline()}\ %k%=[%b,0x%B]\ \ %l/%L,%c%V\ \ %P
 endif
 
 " Print the line number in front of each line.
