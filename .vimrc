@@ -21,7 +21,10 @@ let mapleader = ","
 let maplocalleader = ";"
 " Author that shows up in some of the snippets
 let g:snips_author = 'Triglav <trojhlav@gmail.com>'
-
+" Path to the windows git.exe binary
+if has('win32')
+  let g:fugitive_git_executable="c:\\dev\\git\\bin\\git.exe"
+end
 
 " INTERFACE {{{1
 
