@@ -72,13 +72,12 @@ if has('gui_running')
     set lines=999
     " Number of columns of the screen. (78 + 8 + 4)
     set columns=999
-    " Set fonts.
+    " Get the fonts here:
+    " http://ftp.gnome.org/pub/GNOME/sources/ttf-bitstream-vera/1.10/
     if has('mac')
-      " Get the fonts here:
-      " http://ftp.gnome.org/pub/GNOME/sources/ttf-bitstream-vera/1.10/
       set guifont=Bitstream\ Vera\ Sans\ Mono:h14
     else
-      set guifont=Inconsolata\ Medium\ 13
+      set guifont=Bitstream\ Vera\ Sans\ Mono\ 11
     endif
   endif
   " Number of pixel lines inserted between characters.
