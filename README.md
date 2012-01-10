@@ -24,10 +24,11 @@ Generate Vim doc tags:
 
     :call pathogen#helptags()
 
-### Windows tips
+### Windows
 
 * use `~/vimfiles` instead of `~/.vim`
 * create rather a hard link (without the `-s` flag) instead
+* set enviroment variable `GITDIR` to the location of your `git.exe`
 
 ### Mac OS X
 
