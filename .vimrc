@@ -23,7 +23,7 @@ let maplocalleader = ";"
 let g:snips_author = 'Triglav <trojhlav@gmail.com>'
 " Path to the windows git.exe binary
 if has('win32')
-  let g:fugitive_git_executable="c:\\dev\\git\\bin\\git.exe"
+  let g:fugitive_git_executable=$GITDIR.'\git.exe'
 end
 
 " INTERFACE {{{1
