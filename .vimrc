@@ -490,6 +490,27 @@ vnoremap <silent> <s-tab> <gv
 vnoremap <silent> > >gv
 vnoremap <silent> < <gv
 
+" Set CTRL+C, CTRL+X, CTRL+V for non-mac systems (Taken from mswin.vim)
+if !has('mac')
+  " CTRL-X is Cut
+  vnoremap <C-X> "+x
+  " CTRL-C and CTRL-Insert are Copy
+  vnoremap <C-C> "+y
+  " CTRL-V and SHIFT-Insert are Paste
+  map <C-V> "+gP
+  cmap <C-V> <C-R>+
+
+  " Pasting blockwise and linewise selections is not possible in Insert and
+  " Visual mode without the +virtualedit feature.  They are pasted as if they
+  " were characterwise instead.
+  " Uses the paste.vim autoload script.
+  exe 'inoremap <script> <C-V>' paste#paste_cmd['i']
+  exe 'vnoremap <script> <C-V>' paste#paste_cmd['v']
+
+  " Use CTRL-Q to do what CTRL-V used to do
+  noremap <C-Q> <C-V>
+endif
+
 " Keys for switching between buffers in normal mode.
 if has('mac')
   map <D-1> :tabn 1<CR>
