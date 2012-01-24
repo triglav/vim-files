@@ -65,27 +65,27 @@ set splitright
 
 
 " Settings for GUI version.
+" Get the fonts here:
+" http://dejavu-fonts.org
 if has('gui_running')
   if has('win32')
     " Maximize win32 Vim window.
     autocmd GUIEnter * simalt ~x
     " Set fonts.
-    set guifont=Consolas:h11:cEASTEUROPE
+    set guifont=DejaVu_Sans_Mono:h10:cEASTEUROPE
   else
     " Number of lines in the display.
     set lines=999
     " Number of columns of the screen. (78 + 8 + 4)
     set columns=999
-    " Get the fonts here:
-    " http://ftp.gnome.org/pub/GNOME/sources/ttf-bitstream-vera/1.10/
     if has('mac')
-      set guifont=Bitstream\ Vera\ Sans\ Mono:h14
+      set guifont=DejaVu\ Sans\ Mono:h14
     else
-      set guifont=Bitstream\ Vera\ Sans\ Mono\ 11
+      set guifont=DejaVu\ Sans\ Mono\ 10
     endif
   endif
   " Number of pixel lines inserted between characters.
-  set linespace=2
+  set linespace=1
   " 'c' Use console dialogs instead of popup dialogs for simple choices.
   " 'i' Use a Vim icon.
   " 'g' Grey menu items: Make menu items that are not active grey.

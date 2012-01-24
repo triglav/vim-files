@@ -24,18 +24,19 @@ Generate Vim doc tags:
 
     :call pathogen#helptags()
 
+### Fonts
+
+I am using _DejaVu Sans Mono_ fonts on every platform.
+
+You can get them for free at: http://dejavu-fonts.org
+
+
 ### Windows
 
 * use `~/vimfiles` instead of `~/.vim`
 * create rather a hard link (without the `-s` flag) instead
 * set enviroment variable `GITDIR` to the location of your `git.exe`
 * set enviroment variable `PERLDIR` to the location of your `perl.exe` and `ack-grep` script file (download it from http://betterthangrep.com/ack-standalone)
-
-### Mac OS X
-
-I am using _Bitstream Vera Sans Mono_ fonts on Mac.
-
-You can get them for free at: http://ftp.gnome.org/pub/GNOME/sources/ttf-bitstream-vera/1.10/
 
 ## Custom commands
 
