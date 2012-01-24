@@ -25,6 +25,10 @@ let g:snips_author = 'Triglav <trojhlav@gmail.com>'
 if has('win32')
   let g:fugitive_git_executable=$GITDIR.'\git.exe'
 end
+" Path to the windows ack location
+if has('win32')
+  let g:ackprg=$PERLDIR.'\perl.exe '.$PERLDIR.'\ack-grep -H --nocolor --nogroup --column'
+end
 
 " INTERFACE {{{1
 

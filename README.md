@@ -29,6 +29,7 @@ Generate Vim doc tags:
 * use `~/vimfiles` instead of `~/.vim`
 * create rather a hard link (without the `-s` flag) instead
 * set enviroment variable `GITDIR` to the location of your `git.exe`
+* set enviroment variable `PERLDIR` to the location of your `perl.exe` and `ack-grep` script file (download it from http://betterthangrep.com/ack-standalone)
 
 ### Mac OS X
 
