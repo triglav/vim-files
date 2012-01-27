@@ -644,5 +644,7 @@ autocmd BufWritePost *.snippets call ReloadAllSnippets()
 
 " The NERD tree window will close after opening a file
 let NERDTreeQuitOnOpen = 1
+" Use arrows instead of + ~ chars when displaying directories.
+let NERDTreeDirArrows=1
 
 
