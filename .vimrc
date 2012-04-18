@@ -648,3 +648,21 @@ let NERDTreeQuitOnOpen = 1
 let NERDTreeDirArrows=1
 
 
+" PLUGIN ctrlp {{{1
+
+
+" Enable cross-sessions caching by not clearing the cache files upon exiting Vim
+let g:ctrlp_clear_cache_on_exit = 0
+" Set the directory to store the cache files
+if has('win32')
+  let g:ctrlp_cache_dir = $HOME.'/vimfiles/tmp/ctrlp'
+elseif has('unix')
+  let g:ctrlp_cache_dir = $HOME.'/.vim/tmp/ctrlp'
+endif
+" Use a version control listing command when inside a repository
+if has('win32')
+  let g:ctrlp_user_command = ['.git/', 'cd %s && '.$GITDIR.'\git.exe ls-files']
+else
+  let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files']
+endif
+
