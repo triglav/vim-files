@@ -24,6 +24,14 @@ Generate Vim doc tags:
 
     :call pathogen#helptags()
 
+### Override `.vimrc`
+
+If you would like to override some of the default settings, you can create your
+own `~/.vimrc` containing following line:
+
+    source ~/.vim/.vimrc
+
+
 ### Fonts
 
 I am using _DejaVu Sans Mono_ fonts on every platform.
