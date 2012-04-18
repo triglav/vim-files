@@ -30,6 +30,13 @@ if has('win32')
   let g:ackprg=$PERLDIR.'\perl.exe '.$PERLDIR.'\ack-grep -H --nocolor --nogroup --column'
 end
 
+" Load user personalized script override
+let s:custom_vimrc = "~/.vimrc.custom"
+if filereadable(expand(s:custom_vimrc))
+  exec "source " . s:custom_vimrc
+endif
+
+
 " INTERFACE {{{1
 
 
