@@ -57,3 +57,8 @@
 [submodule "bundle/unimpaired"]
 	path = bundle/unimpaired
 	url = https://github.com/tpope/vim-unimpaired.git
+	ignore = all
+[submodule "bundle/ruby"]
+	path = bundle/ruby
+	url = https://github.com/vim-ruby/vim-ruby.git
+	ignore = all
