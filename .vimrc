@@ -630,6 +630,32 @@ cnoreabbrev Wa wa
 cnoreabbrev WA wa
 
 
+" PLUGIN OmniCppComplete {{{1
+
+
+map <C-F12> :silent !ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+
+if has('win32')
+  set tags+=$HOME/vimfiles/tags/cpp
+  set tags+=$HOME/vimfiles/tags/sdl
+elseif has('unix')
+  set tags+=$HOME/.vim/tags/cpp
+  set tags+=$HOME/.vim/tags/sdl
+endif
+
+let OmniCpp_NamespaceSearch = 1
+let OmniCpp_GlobalScopeSearch = 1
+let OmniCpp_ShowAccess = 1
+let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
+let OmniCpp_MayCompleteDot = 1 " autocomplete after .
+let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
+let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
+
+" automatically open and close the popup menu / preview window
+au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+set completeopt=menuone,menu,longest,preview
+
+
 " PLUGIN snipMate {{{1
 
 

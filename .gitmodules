@@ -62,3 +62,7 @@
 	path = bundle/ruby
 	url = https://github.com/vim-ruby/vim-ruby.git
 	ignore = all
+[submodule "bundle/omni-cpp-complete"]
+	path = bundle/omni-cpp-complete
+	url = https://github.com/vim-scripts/OmniCppComplete.git
+	ignore = all
