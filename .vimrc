@@ -222,7 +222,12 @@ set background=dark
 colorscheme darkblue
 
 " The 'cinoptions' affect the way 'cindent' reindents lines in a C program.
-set cinoptions=:0g0U1
+" :0    - place case labels 0 characters from the indent of the switch()
+" g0    - place C++ scope declarations (protected:) 0 characters from the indent of the block they are in
+" U1    - do not ignore the parentheses indenting in case the unclosed parentheses is the first non-white
+"         character in its line
+" N-s   - do not indent inside C++ namespace
+set cinoptions=:0g0U1N-s
 
 " List of items that control the format of the printed output.
 " - A4 paper format
