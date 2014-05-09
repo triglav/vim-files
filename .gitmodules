@@ -66,3 +66,7 @@
 	path = bundle/omni-cpp-complete
 	url = https://github.com/vim-scripts/OmniCppComplete.git
 	ignore = all
+[submodule "bundle/tagbar"]
+	path = bundle/tagbar
+	url = https://github.com/majutsushi/tagbar.git
+	ignore = all

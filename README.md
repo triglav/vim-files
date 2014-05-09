@@ -62,4 +62,6 @@ This config contains a couple of very useful commands:
 * `<Leader>gd` Fugitive's git diff
 * `<Leader>gb` Fugitive's git blame
 * `<Leader>gs` Fugitive's git status
+* `<F12>` Toggle Tagbar
+* `<C-F12>` Regenerate tags
 

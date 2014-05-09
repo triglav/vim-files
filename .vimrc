@@ -580,7 +580,7 @@ nnoremap <return> :noh<return><esc><return>
 nnoremap Y y$
 
 " Toggle pastemode easily in insert and command mode.
-set pastetoggle=<F12>
+set pastetoggle=<F4>
 " Always disable paste mode when leaving insert mode.
 autocmd InsertLeave * set nopaste
 
@@ -642,10 +642,17 @@ cnoreabbrev Wa wa
 cnoreabbrev WA wa
 
 
+" PLUGIN Tagbar {{{1
+
+
+let g:tagbar_autoclose = 1
+let g:tagbar_left = 1
+nnoremap <silent> <F12> :TagbarToggle<CR>
+map <C-F12> :silent !ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+
+
 " PLUGIN OmniCppComplete {{{1
 
-
-map <C-F12> :silent !ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 if has('win32')
   set tags+=$HOME/vimfiles/tags/cpp
