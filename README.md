@@ -57,6 +57,7 @@ This config contains a couple of very useful commands:
 * `<Leader>m` Opens _Buf Explorer_ plugin window.
 * `<Leader>cd` Changes the current directory to the file being edited.
 * `<Leader>l` Toggles _list_ display
+* `<Leader>w` Toggles _wrap_ display
 * `<Leader>t` Opens new tab
 * `<Leader>gd` Fugitive's git diff
 * `<Leader>gb` Fugitive's git blame

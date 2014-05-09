@@ -608,6 +608,8 @@ nnoremap <Leader>m :BufExplorer<CR>
 nmap <Leader>cd :cd %:p:h<CR>
 " Easy toggle list
 nnoremap <Leader>l :set list!<CR>
+" Easy toggle wrap
+nnoremap <Leader>w :set wrap!<CR>
 " Open new tab
 nnoremap <Leader>t <ESC>:tabnew<CR>
 
