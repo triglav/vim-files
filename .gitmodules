@@ -98,3 +98,8 @@
 	url = https://github.com/tpope/vim-pathogen.git
 	branch = master
 	ignore = all
+[submodule "bundle/vim-multiple-cursors"]
+	path = bundle/vim-multiple-cursors
+	url = https://github.com/terryma/vim-multiple-cursors.git
+	branch = master
+	ignore = all
