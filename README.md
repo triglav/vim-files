@@ -58,4 +58,7 @@ This config contains a couple of very useful commands:
 * `<Leader>cd` Changes the current directory to the file being edited.
 * `<Leader>l` Toggles _list_ display
 * `<Leader>t` Opens new tab
+* `<Leader>gd` Fugitive's git diff
+* `<Leader>gb` Fugitive's git blame
+* `<Leader>gs` Fugitive's git status
 

@@ -611,6 +611,11 @@ nnoremap <Leader>l :set list!<CR>
 " Open new tab
 nnoremap <Leader>t <ESC>:tabnew<CR>
 
+" Fugitive commands
+nnoremap <Leader>gd :Gdiff<CR>
+nnoremap <Leader>gb :Gblame<CR>
+nnoremap <Leader>gs :Gstatus<CR>
+
 
 " CUSTOM ABBREVIATIONS {{{1
 
