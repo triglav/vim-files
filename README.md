@@ -34,9 +34,10 @@ own `~/.vimrc` containing following line:
 
 ### Fonts
 
-I am using _DejaVu Sans Mono_ fonts on every platform.
+I am using _DejaVu Sans Mono for Powerline_ fonts on every platform (vim-airline
+makes use of the special characters).
 
-You can get them for free at: http://dejavu-fonts.org
+You can get them for free at: https://github.com/Lokaltog/powerline-fonts/tree/master/DejaVuSansMono
 
 
 ### Windows

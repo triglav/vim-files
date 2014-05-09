@@ -35,10 +35,6 @@ end
 
 " The last window will always have a status line.
 set laststatus=2
-if has("statusline")
-  " This option determines the content of the status line.
-  set statusline=%n:\ %<%f\ %y%m%r%{fugitive#statusline()}\ %k%=[%b,0x%B]\ \ %l/%L,%c%V\ \ %P
-endif
 
 " Print the line number in front of each line.
 set number
@@ -72,7 +68,7 @@ if has('gui_running')
     " Maximize win32 Vim window.
     autocmd GUIEnter * simalt ~x
     " Set fonts.
-    set guifont=DejaVu_Sans_Mono:h10:cEASTEUROPE
+    set guifont=DejaVu_Sans_Mono_for_Powerline:h10:cEASTEUROPE
   else
     " Number of lines in the display.
     set lines=999
@@ -649,6 +645,18 @@ let g:tagbar_autoclose = 1
 let g:tagbar_left = 1
 nnoremap <silent> <F12> :TagbarToggle<CR>
 map <C-F12> :silent !ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+
+
+" PLUGIN vim-airline {{{1
+
+
+let g:airline_detect_modified = 1
+let g:airline_detect_paste = 1
+let g:airline_inactive_collapse = 1
+let g:airline_powerline_fonts = has('gui_running')
+
+let g:airline#extensions#tagbar#enabled = 0
+let g:airline#extensions#whitespace#enabled = 0
 
 
 " PLUGIN OmniCppComplete {{{1
