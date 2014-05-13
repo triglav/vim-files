@@ -6,9 +6,10 @@ version 7.3
 " This option has the effect of making Vim behave in a more useful way.
 set nocompatible
 
-
+" Init pathogen
+runtime bundle/pathogen/autoload/pathogen.vim
 " Append all the plugins in the "bundle" directory.
-call pathogen#runtime_append_all_bundles()
+execute pathogen#infect()
 
 
 " PERSONAL (MODIFY THIS) {{{1
