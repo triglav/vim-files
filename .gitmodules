@@ -108,3 +108,8 @@
 	url = https://github.com/vim-jp/cpp-vim.git
 	branch = master
 	ignore = all
+[submodule "bundle/googletest-syntax"]
+	path = bundle/googletest-syntax
+	url = https://github.com/triglav/googletest-syntax.git
+	branch = master
+	ignore = all
