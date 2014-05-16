@@ -103,3 +103,8 @@
 	url = https://github.com/terryma/vim-multiple-cursors.git
 	branch = master
 	ignore = all
+[submodule "bundle/cpp"]
+	path = bundle/cpp
+	url = https://github.com/vim-jp/cpp-vim.git
+	branch = master
+	ignore = all
