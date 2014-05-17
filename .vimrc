@@ -658,6 +658,7 @@ let g:airline_powerline_fonts = has('gui_running')
 
 let g:airline#extensions#tagbar#enabled = 0
 let g:airline#extensions#whitespace#enabled = 0
+let g:airline_section_x = airline#section#create(['%n:', 'filetype'])
 
 
 " PLUGIN OmniCppComplete {{{1
