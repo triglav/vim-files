@@ -76,9 +76,9 @@ if has('gui_running')
     " Number of columns of the screen. (78 + 8 + 4)
     set columns=999
     if has('mac')
-      set guifont=DejaVu\ Sans\ Mono:h14
+      set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h14
     else
-      set guifont=DejaVu\ Sans\ Mono\ 10
+      set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
     endif
   endif
   " Number of pixel lines inserted between characters.
