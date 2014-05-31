@@ -513,7 +513,7 @@ if !has('mac')
   exe 'vnoremap <script> <C-V>' paste#paste_cmd['v']
 endif
 
-" Keys for switching between buffers in normal mode.
+" Keys for switching between tabs in normal mode.
 if has('mac')
   map <D-1> :tabn 1<CR>
   map <D-2> :tabn 2<CR>
@@ -540,7 +540,7 @@ endif
 map <C-Tab> :tabn<CR>
 map <S-C-Tab> :tabp<CR>
 
-" Keys for switching between buffers in insert mode.
+" Keys for switching between tabs in insert mode.
 if has('mac')
   imap <D-1> <Esc>:tabn 1<CR>
   imap <D-2> <Esc>:tabn 2<CR>
@@ -614,6 +614,11 @@ nnoremap <Leader>t <ESC>:tabnew<CR>
 nnoremap <Leader>gd :Gdiff<CR>
 nnoremap <Leader>gb :Gblame<CR>
 nnoremap <Leader>gs :Gstatus<CR>
+
+" Diff commands
+nnoremap <Leader>dt :diffthis<CR>
+nnoremap <Leader>do :diffoff<CR>
+nnoremap <Leader>du :diffupdate<CR>
 
 
 " CUSTOM ABBREVIATIONS {{{1

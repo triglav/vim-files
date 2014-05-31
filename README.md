@@ -51,18 +51,25 @@ You can get them for free at: https://github.com/Lokaltog/powerline-fonts/tree/m
 
 This config contains a couple of very useful commands:
 
-* `<leader>W` Strips all trailing whitespace in the current file.
-* `<leader>v` Reselects the text that was just pasted.
-* `<Leader>r` Forces vim screen redraw.
-* `<Leader>n` Opens the _NERD Tree_ plugin window.
-* `<Leader>m` Opens _Buf Explorer_ plugin window.
-* `<Leader>cd` Changes the current directory to the file being edited.
-* `<Leader>l` Toggles _list_ display
-* `<Leader>w` Toggles _wrap_ display
-* `<Leader>t` Opens new tab
-* `<Leader>gd` Fugitive's git diff
-* `<Leader>gb` Fugitive's git blame
-* `<Leader>gs` Fugitive's git status
-* `<F12>` Toggle Tagbar
-* `<C-F12>` Regenerate tags
+Command      | Description
+-------------|------------
+`<leader>W`  | Strips all trailing whitespace in the current file.
+`<leader>v`  | Reselects the text that was just pasted.
+`<Leader>r`  | Forces vim screen redraw.
+`<Leader>n`  | Opens the _NERD Tree_ plugin window.
+`<Leader>m`  | Opens _Buf Explorer_ plugin window.
+`<Leader>cd` | Changes the current directory to the file being edited.
+`<Leader>l`  | Toggles _list_ display
+`<Leader>w`  | Toggles _wrap_ display
+`<Leader>t`  | Opens new tab
+`<Leader>gd` | Fugitive's git diff
+`<Leader>gb` | Fugitive's git blame
+`<Leader>gs` | Fugitive's git status
+`<Leader>dt` | `:diffthis`
+`<Leader>do` | `:diffoff`
+`<Leader>du` | `:diffupdate`
+`<F12>`      | Toggle Tagbar
+`<C-F12>`    | Regenerate tags
+`<F4>`       | Toggle paste mode
+`Y`          | `y$`
 
