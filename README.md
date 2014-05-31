@@ -20,9 +20,9 @@ Create `.vimrc` link in your home directory:
 
     $ ln -s ~/.vim/.vimrc ~/.vimrc
 
-Generate Vim doc tags:
+Generate Vim doc tags with pathogen:
 
-    :call pathogen#helptags()
+    :Helptags
 
 ### Override `.vimrc`
 
