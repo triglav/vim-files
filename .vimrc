@@ -620,6 +620,9 @@ nnoremap <Leader>dt :diffthis<CR>
 nnoremap <Leader>do :diffoff<CR>
 nnoremap <Leader>du :diffupdate<CR>
 
+" Delete the current file
+nnoremap <C-S-Del> :call delete(expand('%'))<CR>
+
 
 " CUSTOM ABBREVIATIONS {{{1
 

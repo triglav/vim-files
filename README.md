@@ -68,6 +68,7 @@ Command      | Description
 `<Leader>dt` | `:diffthis`
 `<Leader>do` | `:diffoff`
 `<Leader>du` | `:diffupdate`
+`<C-S-Del>`  | Deletes the current file
 `<F12>`      | Toggle Tagbar
 `<C-F12>`    | Regenerate tags
 `<F4>`       | Toggle paste mode
