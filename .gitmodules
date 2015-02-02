@@ -73,11 +73,6 @@
 	url = https://github.com/vim-ruby/vim-ruby.git
 	branch = master
 	ignore = all
-[submodule "bundle/omni-cpp-complete"]
-	path = bundle/omni-cpp-complete
-	url = https://github.com/vim-scripts/OmniCppComplete.git
-	branch = master
-	ignore = all
 [submodule "bundle/tagbar"]
 	path = bundle/tagbar
 	url = https://github.com/majutsushi/tagbar.git
@@ -116,5 +111,8 @@
 [submodule "ultisnips"]
 	path = ultisnips
 	url = https://github.com/triglav/vim-ultisnips.git
+[submodule "bundle/you-complete-me"]
+	path = bundle/you-complete-me
+	url = https://github.com/Valloric/YouCompleteMe.git
 	branch = master
 	ignore = all

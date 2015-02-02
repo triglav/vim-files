@@ -333,6 +333,16 @@ set hidden
 
 set visualbell
 
+" - Use a popup menu to show the possible completions.  The menu is only shown
+"   when there is more than one match and sufficient colors are available.
+" - Use the popup menu also when there is only one match. Useful when there is
+"   additional information about the match, e.g., what file it comes from.
+" - Only insert the longest common text of the matches.  If the menu is
+"   displayed you can use CTRL-L to add more characters.  Whether case is
+"   ignored depends on the kind of completion.  For buffer text the 'ignorecase'
+"   option is used.
+set completeopt=menu,menuone,longest
+
 
 " SHELL {{{1
 
@@ -653,7 +663,15 @@ cnoreabbrev WA wa
 let g:tagbar_autoclose = 1
 let g:tagbar_left = 1
 nnoremap <silent> <F12> :TagbarToggle<CR>
-map <C-F12> :silent !ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+map <C-F12> :silent !ctags -R --c++-kinds=+p --fields=+iaSl --extra=+q .<CR>
+
+if has('win32')
+  set tags+=$HOME/vimfiles/tags/cpp
+  set tags+=$HOME/vimfiles/tags/sdl
+elseif has('unix')
+  set tags+=$HOME/.vim/tags/cpp
+  set tags+=$HOME/.vim/tags/sdl
+endif
 
 
 " PLUGIN vim-airline {{{1
@@ -669,28 +687,13 @@ let g:airline#extensions#whitespace#enabled = 0
 let g:airline_section_x = airline#section#create(['%n:', 'filetype'])
 
 
-" PLUGIN OmniCppComplete {{{1
+" PLUGIN YouCompleteMe {{{1
 
 
-if has('win32')
-  set tags+=$HOME/vimfiles/tags/cpp
-  set tags+=$HOME/vimfiles/tags/sdl
-elseif has('unix')
-  set tags+=$HOME/.vim/tags/cpp
-  set tags+=$HOME/.vim/tags/sdl
-endif
-
-let OmniCpp_NamespaceSearch = 1
-let OmniCpp_GlobalScopeSearch = 1
-let OmniCpp_ShowAccess = 1
-let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
-let OmniCpp_MayCompleteDot = 1 " autocomplete after .
-let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
-let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
-
-" automatically open and close the popup menu / preview window
-au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
-set completeopt=menuone,menu,longest,preview
+let g:ycm_key_list_select_completion=['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion=['<C-p>', '<Up>']
+let g:ycm_show_diagnostics_ui = 0
+let g:ycm_extra_conf_globlist = ['./.ycm_extra_conf.py']
 
 
 " PLUGIN NERD Tree {{{1
