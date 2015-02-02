@@ -28,7 +28,7 @@ if has('win32')
 end
 " Path to the windows ack location
 if has('win32')
-  let g:ackprg=$PERLDIR.'\perl.exe '.$PERLDIR.'\ack-grep -H --nocolor --nogroup --column'
+  let g:ackprg=$PERLDIR.'\perl.exe '.$PERLDIR.'\ack-grep'
 end
 
 " INTERFACE {{{1
