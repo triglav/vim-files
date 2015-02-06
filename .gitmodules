@@ -113,3 +113,8 @@
 	url = https://github.com/SirVer/ultisnips.git
 	branch = master
 	ignore = all
+[submodule "ultisnips"]
+	path = ultisnips
+	url = https://github.com/triglav/vim-ultisnips.git
+	branch = master
+	ignore = all
