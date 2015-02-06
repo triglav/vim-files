@@ -8,11 +8,6 @@
 	url = https://github.com/vim-scripts/bufexplorer.zip.git
 	branch = master
 	ignore = all
-[submodule "bundle/snipmate"]
-	path = bundle/snipmate
-	url = https://github.com/akitaonrails/snipmate.vim.git
-	branch = master
-	ignore = all
 [submodule "snippets"]
 	path = snippets
 	url = https://github.com/triglav/vim-snippets.git
@@ -111,5 +106,10 @@
 [submodule "bundle/googletest-syntax"]
 	path = bundle/googletest-syntax
 	url = https://github.com/triglav/googletest-syntax.git
+	branch = master
+	ignore = all
+[submodule "bundle/ultisnips"]
+	path = bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips.git
 	branch = master
 	ignore = all

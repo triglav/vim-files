@@ -693,15 +693,6 @@ au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
 
 
-" PLUGIN snipMate {{{1
-
-
-" Command for reloading snipMate snippets
-command SnippetsReload call ReloadAllSnippets()
-" Reload snippets after saving
-autocmd BufWritePost *.snippets call ReloadAllSnippets()
-
-
 " PLUGIN NERD Tree {{{1
 
 
