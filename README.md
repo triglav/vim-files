@@ -56,7 +56,6 @@ Command      | Description
 `<leader>W`  | Strips all trailing whitespace in the current file.
 `<leader>v`  | Reselects the text that was just pasted.
 `<Leader>r`  | Forces vim screen redraw.
-`<Leader>n`  | Opens the _NERD Tree_ plugin window.
 `<Leader>m`  | Opens _Buf Explorer_ plugin window.
 `<Leader>cd` | Changes the current directory to the file being edited.
 `<Leader>l`  | Toggles _list_ display
@@ -73,4 +72,5 @@ Command      | Description
 `<C-F12>`    | Regenerate tags
 `<F4>`       | Toggle paste mode
 `Y`          | `y$`
+`-`          | Displays the directory listing in the current buffer
 

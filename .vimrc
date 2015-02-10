@@ -607,8 +607,6 @@ nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 nnoremap <leader>v V`]
 " Force redraw.
 nnoremap <Leader>r :redraw!<CR>
-" Open file tree.
-nnoremap <Leader>n :NERDTreeToggle<CR>
 " Open bufexplorer.
 nnoremap <Leader>m :BufExplorer<CR>
 " Easily change directory to the file being edited.
@@ -694,15 +692,6 @@ let g:ycm_key_list_select_completion=['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion=['<C-p>', '<Up>']
 let g:ycm_show_diagnostics_ui = 0
 let g:ycm_extra_conf_globlist = ['./.ycm_extra_conf.py']
-
-
-" PLUGIN NERD Tree {{{1
-
-
-" The NERD tree window will close after opening a file
-let NERDTreeQuitOnOpen = 1
-" Use arrows instead of + ~ chars when displaying directories.
-let NERDTreeDirArrows=1
 
 
 " PLUGIN ctrlp {{{1

@@ -1,8 +1,3 @@
-[submodule "bundle/nerd-tree"]
-	path = bundle/nerd-tree
-	url = https://github.com/scrooloose/nerdtree.git
-	branch = master
-	ignore = all
 [submodule "bundle/bufexplorer"]
 	path = bundle/bufexplorer
 	url = https://github.com/vim-scripts/bufexplorer.zip.git
@@ -114,5 +109,10 @@
 [submodule "bundle/you-complete-me"]
 	path = bundle/you-complete-me
 	url = https://github.com/Valloric/YouCompleteMe.git
+	branch = master
+	ignore = all
+[submodule "bundle/vinegar"]
+	path = bundle/vinegar
+	url = https://github.com/tpope/vim-vinegar.git
 	branch = master
 	ignore = all
