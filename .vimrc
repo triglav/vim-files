@@ -224,7 +224,8 @@ colorscheme darkblue
 " U1    - do not ignore the parentheses indenting in case the unclosed parentheses is the first non-white
 "         character in its line
 " N-s   - do not indent inside C++ namespace
-set cinoptions=:0g0U1N-s
+" j1    - indent anonymous classes/functions correctly (or fail trying)
+set cinoptions=:0g0U1N-sj1
 
 " List of items that control the format of the printed output.
 " - A4 paper format
