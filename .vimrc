@@ -216,7 +216,7 @@ endif
 syntax on
 " Load color scheme.
 set background=dark
-colorscheme darkblue
+colorscheme tajga
 
 " The 'cinoptions' affect the way 'cindent' reindents lines in a C program.
 " :0    - place case labels 0 characters from the indent of the switch()
@@ -684,6 +684,7 @@ let g:airline_powerline_fonts = has('gui_running')
 let g:airline#extensions#tagbar#enabled = 0
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline_section_x = airline#section#create(['%n:', 'filetype'])
+let g:airline_theme = 'kalisi'
 
 
 " PLUGIN YouCompleteMe {{{1

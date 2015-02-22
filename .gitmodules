@@ -106,6 +106,8 @@
 [submodule "ultisnips"]
 	path = ultisnips
 	url = https://github.com/triglav/vim-ultisnips.git
+	branch = master
+	ignore = all
 [submodule "bundle/you-complete-me"]
 	path = bundle/you-complete-me
 	url = https://github.com/Valloric/YouCompleteMe.git
@@ -114,5 +116,10 @@
 [submodule "bundle/vinegar"]
 	path = bundle/vinegar
 	url = https://github.com/tpope/vim-vinegar.git
+	branch = master
+	ignore = all
+[submodule "bundle/colors-tajga"]
+	path = bundle/colors-tajga
+	url = https://github.com/triglav/vim-colors-tajga.git
 	branch = master
 	ignore = all
