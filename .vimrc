@@ -498,6 +498,9 @@ nnoremap <F1> <Esc>
 inoremap <F1> <Esc>
 vnoremap <F1> <Esc>
 
+" Remove the annoying Q ex mode bind
+nnoremap Q <Nop>
+
 " Move by screen lines instead of file line.
 nnoremap <silent> j gj
 nnoremap <silent> k gk
