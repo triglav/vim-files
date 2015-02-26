@@ -609,7 +609,8 @@ endif
 " Strip all trailing whitespace in the current file.
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 " Reselect the text that was just pasted.
-nnoremap <leader>v V`]
+nnoremap <leader>v `[v`]
+nnoremap <leader>V `[V`]
 " Force redraw.
 nnoremap <Leader>r :redraw!<CR>
 " Open bufexplorer.
