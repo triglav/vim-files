@@ -44,7 +44,7 @@ You can get them for free at: https://github.com/Lokaltog/powerline-fonts/tree/m
 
 ### Windows
 
-* use 64-bit Vim from: https://bitbucket.org/Haroogan/vim-for-windows
+* use 64-bit Vim from: https://tuxproject.de/projects/vim/ or https://bitbucket.org/Haroogan/vim-for-windows
 * use `~/vimfiles` instead of `~/.vim`
 * create rather a hard link (without the `-s` flag) instead
 * set enviroment variable `GITDIR` to the location of your `git.exe`
