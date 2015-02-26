@@ -686,6 +686,12 @@ let g:airline_detect_paste = 1
 let g:airline_inactive_collapse = 1
 let g:airline_powerline_fonts = has('gui_running')
 
+if !has('gui_running')
+  let g:airline_left_sep=''
+  let g:airline_right_sep=''
+  let g:airline_section_z=''
+endif
+
 let g:airline#extensions#tagbar#enabled = 0
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline_section_x = airline#section#create(['%n:', 'filetype'])
