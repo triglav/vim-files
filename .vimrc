@@ -16,10 +16,10 @@ execute pathogen#infect()
 
 
 " Tab size
-let tab_size = 2
+let g:tab_size = 2
 " Leader mappings
-let mapleader = ","
-let maplocalleader = ";"
+let g:mapleader = ","
+let g:maplocalleader = ";"
 " Author that shows up in some of the snippets
 let g:snips_author = 'Triglav <trojhlav@gmail.com>'
 " Path to the windows git.exe binary
@@ -209,7 +209,7 @@ set define=^\(#\s*define\|[a-z]*\s*const\s*[a-z]*\)
 
 " use 256 colors in xterm
 if &term =~ "xterm"
-  let &t_Co=256
+  let &g:t_Co=256
 endif
 
 " Enable syntax highlighting.
@@ -286,9 +286,9 @@ set nojoinspaces
 " Use the appropriate number of spaces to insert a <Tab>.
 set expandtab
 " Number of spaces that a <Tab> in the file counts for.
-let &tabstop=tab_size
+let &g:tabstop=g:tab_size
 " Number of spaces to use for each step of (auto)indent.
-let &shiftwidth=tab_size
+let &g:shiftwidth=g:tab_size
 " Round indent to multiple of 'shiftwidth'.  Applies to > and < commands.
 set shiftround
 
@@ -352,7 +352,7 @@ set completeopt=menu,menuone,longest
 if has('win32')
   " Name of the shell to use for ! and :! commands.
   "set shell=c:\cygwin\bin\bash.exe\ --login
-  let &shell=$COMSPEC
+  let &g:shell=$COMSPEC
   " Always use the shell.
   " Use "shell 'shellcmdflag' cmd" to start external commands.
   set shelltype=0
