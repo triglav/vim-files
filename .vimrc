@@ -225,7 +225,8 @@ colorscheme tajga
 "         character in its line
 " N-s   - do not indent inside C++ namespace
 " j1    - indent anonymous classes/functions correctly (or fail trying)
-set cinoptions=:0g0U1N-sj1
+" l1    - align with a case label instead of the statement after it in the same line
+set cinoptions=:0g0U1N-sj1l1
 
 " List of items that control the format of the printed output.
 " - A4 paper format
