@@ -22,10 +22,6 @@ let g:mapleader = ","
 let g:maplocalleader = ";"
 " Author that shows up in some of the snippets
 let g:snips_author = 'Triglav <trojhlav@gmail.com>'
-" Path to the windows git.exe binary
-if has('win32')
-  let g:fugitive_git_executable=$GITDIR.'\git.exe'
-end
 " Path to the windows ack location
 if has('win32')
   let g:ackprg=$PERLDIR.'\perl.exe '.$PERLDIR.'\ack-grep'
@@ -719,9 +715,5 @@ elseif has('unix')
   let g:ctrlp_cache_dir = $HOME.'/.vim/tmp/ctrlp'
 endif
 " Use a version control listing command when inside a repository
-if has('win32')
-  let g:ctrlp_user_command = ['.git/', 'cd %s && '.$GITDIR.'\git.exe ls-files']
-else
-  let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files']
-endif
+let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files']
 
