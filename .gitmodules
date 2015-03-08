@@ -123,3 +123,8 @@
 	url = https://github.com/triglav/vim-colors-tajga.git
 	branch = master
 	ignore = all
+[submodule "bundle/projectionist"]
+	path = bundle/projectionist
+	url = https://github.com/tpope/vim-projectionist.git
+	branch = master
+	ignore = all
