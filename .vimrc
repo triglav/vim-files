@@ -106,6 +106,8 @@ set wrap
 set linebreak
 " String to put at the start of lines that have been wrapped.
 set showbreak=>>\ 
+" Show filler lines and as vertical splits
+set diffopt=filler,vertical
 
 
 " Minimal number of screen lines to keep above and below the cursor.
