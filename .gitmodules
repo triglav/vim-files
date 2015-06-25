@@ -128,3 +128,8 @@
 	url = https://github.com/tpope/vim-projectionist.git
 	branch = master
 	ignore = all
+[submodule "bundle/endwise"]
+	path = bundle/endwise
+	url = https://github.com/tpope/vim-endwise.git
+	branch = master
+	ignore = all
