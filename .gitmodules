@@ -133,3 +133,8 @@
 	url = https://github.com/tpope/vim-endwise.git
 	branch = master
 	ignore = all
+[submodule "bundle/vim-airline-themes"]
+	path = bundle/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes
+	branch = master
+	ignore = all
