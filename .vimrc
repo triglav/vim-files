@@ -28,6 +28,7 @@ Plug 'Nemo157/glsl.vim'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'junegunn/vim-plug'
 Plug 'kien/ctrlp.vim'
+Plug 'FelikZ/ctrlp-py-matcher'
 Plug 'majutsushi/tagbar'
 Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdcommenter'
@@ -61,8 +62,11 @@ let g:mapleader = ","
 let g:maplocalleader = ";"
 " Author that shows up in some of the snippets
 let g:snips_author = 'Triglav <trojhlav@gmail.com>'
-" Path to the windows ack location
-if has('win32')
+
+if executable("ag")
+  let g:ackprg = 'ag --nogroup --nocolor --column'
+elseif has('win32')
+  " Path to the windows ack location
   let g:ackprg=$PERLDIR.'\perl.exe '.$PERLDIR.'\ack-grep'
 end
 
@@ -747,14 +751,33 @@ let g:ycm_extra_conf_globlist = ['./.ycm_extra_conf.py']
 " PLUGIN ctrlp {{{1
 
 
+" Set delay to prevent extra search
+let g:ctrlp_lazy_update = 350
 " Enable cross-sessions caching by not clearing the cache files upon exiting Vim
 let g:ctrlp_clear_cache_on_exit = 0
+" Set no file limit
+let g:ctrlp_max_files = 0
 " Set the directory to store the cache files
 if has('win32')
   let g:ctrlp_cache_dir = $HOME.'/vimfiles/tmp/ctrlp'
 elseif has('unix')
   let g:ctrlp_cache_dir = $HOME.'/.vim/tmp/ctrlp'
 endif
-" Use a version control listing command when inside a repository
-let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files']
+
+" If ag is available use it as filename list generator instead of 'find'
+if executable("ag")
+  set grepprg=ag\ --nogroup\ --nocolor
+  let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --ignore ''.git'' --ignore ''.DS_Store'' --ignore ''node_modules'' --hidden -g ""'
+else
+  " Use a version control listing command when inside a repository
+  let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files']
+endif
+
+" PyMatcher for CtrlP
+if !has('python')
+  echo 'In order to use pymatcher plugin, you need +python compiled vim'
+else
+  let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+endif
+
 
