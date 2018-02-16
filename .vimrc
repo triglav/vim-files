@@ -24,17 +24,21 @@ else
   endif
   call plug#begin('~/.vim/plugged')
 endif
+" ctrlp
+Plug 'kien/ctrlp.vim'
+Plug 'FelikZ/ctrlp-py-matcher'
+" git
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+
 Plug 'Nemo157/glsl.vim'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'junegunn/vim-plug'
-Plug 'kien/ctrlp.vim'
-Plug 'FelikZ/ctrlp-py-matcher'
 Plug 'majutsushi/tagbar'
 Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-repeat'
@@ -323,6 +327,8 @@ set notimeout
 set nottimeout
 " Insert only one space after a '.', '?' and '!' with a join command.
 set nojoinspaces
+" Used by gitgutter
+set updatetime=100
 
 " Use the appropriate number of spaces to insert a <Tab>.
 set expandtab
