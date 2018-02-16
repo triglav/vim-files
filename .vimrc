@@ -1,15 +1,54 @@
 " Vim 'vimrc' file
 " Maintainer:   Triglav <trojhlav@gmail.com>
 
-version 7.3
+version 8.0
 
 " This option has the effect of making Vim behave in a more useful way.
 set nocompatible
 
-" Init pathogen
-runtime bundle/pathogen/autoload/pathogen.vim
-" Append all the plugins in the "bundle" directory.
-execute pathogen#infect()
+" Init vim-plug
+if has('win32')
+  " Update vim-plug
+  if empty(glob('~/vimfiles/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+          \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  endif
+  call plug#begin('~/vimfiles/plugged')
+else
+  " Update vim-plug
+  if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+          \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  endif
+  call plug#begin('~/.vim/plugged')
+endif
+Plug 'Nemo157/glsl.vim'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+Plug 'junegunn/vim-plug'
+Plug 'kien/ctrlp.vim'
+Plug 'majutsushi/tagbar'
+Plug 'mileszs/ack.vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-git'
+Plug 'tpope/vim-projectionist'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-vinegar'
+Plug 'triglav/googletest-syntax'
+Plug 'triglav/vim-colors-tajga'
+Plug 'triglav/vim-visual-increment'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-jp/cpp-vim'
+Plug 'vim-ruby/vim-ruby'
+Plug 'vim-scripts/bufexplorer.zip'
+call plug#end()
 
 
 " PERSONAL (MODIFY THIS) {{{1
