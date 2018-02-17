@@ -1,0 +1,144 @@
+priority -50
+
+extends c
+
+priority -49
+
+snippet Inc "#include <...>"
+#include <${1:iostream}>
+endsnippet
+snippet inc "#include"
+#include "${1:`!p
+if not snip.c:
+	snip.rv = (os.path.splitext(path)[0]).replace('\\','/')
+	i = snip.rv.find("/src/")
+	if i != -1:
+		snip.rv = snip.rv[i+5:]
+else:
+	snip.rv = snip.c`}.h"
+endsnippet
+snippet once "Include header once only guard"
+#ifndef TAJGA_${1:`!p
+if not snip.c:
+	import string
+	snip.rv = re.sub(r'[^A-Za-z0-9]+','_', path).upper()
+	i = snip.rv.find("_SRC_")
+	if i != -1:
+		snip.rv = snip.rv[i+5:]
+else:
+	snip.rv = snip.c`}_
+#define TAJGA_$1_
+
+namespace ${2:tajga} {
+
+${VISUAL}${0}
+
+} // namespace $2
+
+#endif // TAJGA_$1_
+
+endsnippet
+snippet map "std::map"
+using ${3:map_type} = std::map<${1:key}, ${2:T}>;
+$3 ${4:map_name};
+endsnippet
+snippet umap "std::unordered_map"
+using ${3:map_type} = std::unordered_map<${1:key}, ${2:T}>;
+$3 ${4:map_name};
+endsnippet
+snippet vector "std::vector"
+std::vector<${1:T}> ${2:name};
+endsnippet
+snippet list "std::list"
+std::list<${1:T}> ${2:name};
+endsnippet
+snippet up "std::unique_ptr"
+std::unique_ptr<${1:${VISUAL:T}}>
+endsnippet
+snippet sp "std::shared_ptr"
+std::shared_ptr<${1:${VISUAL:T}}>
+endsnippet
+snippet mu "std::make_unique"
+std::make_unique<${1:${VISUAL:T}}>
+endsnippet
+snippet ms "std::make_shared"
+std::make_shared<${1:${VISUAL:T}}>
+endsnippet
+snippet ns "namespace"
+namespace ${1:tajga} {
+${VISUAL}${0}
+} // namespace $1
+endsnippet
+snippet cl "class"
+class ${1:`!p snip.rv = ''.join(x for x in snip.basename.title() if x.isalnum()) or "UNTITLED"`} {
+public:
+	$1($1 const &) = delete;
+	$1 & operator= ($1 const &) = delete;
+
+	$1($1 &&) = default;
+	$1 & operator= ($1 &&) = default;
+
+	$1();
+	~$1();
+
+private:
+${0}
+}; // class $1
+endsnippet
+snippet iface "interface"
+class ${1:`!p snip.rv = ''.join(x for x in snip.basename.title() if x.isalnum()) or "UNTITLED"`} {
+public:
+	virtual ~$1() = default;
+${0}
+}; // class $1
+endsnippet
+snippet st "struct"
+struct ${1:`!p snip.rv = ''.join(x for x in snip.basename.title() if x.isalnum()) or "UNTITLED"`} {
+	${0:// data}
+}; // struct $1
+endsnippet
+snippet en "enum class"
+enum class ${1:name} : ${2:int} {
+	${3:kInvalid} = 0,${0}
+	kCount
+}; // enum class $1
+endsnippet
+snippet for "For Loop"
+for (auto ${2:i} = 0; $2 < ${1:kCount}; ${3:++}$2) {
+	${VISUAL}${0}
+}
+endsnippet
+snippet forr "Custom For Loop"
+for (auto ${1:i} = ${2:0}; ${3:$1 < 10}; ${4:++}$1) {
+	${VISUAL}${0}
+}
+endsnippet
+snippet fore "For Each"
+for (${1:auto} ${2:i} : ${3:list}) {
+	${VISUAL}${0}
+}
+endsnippet
+snippet iter "Iteration"
+for (auto ${1:i} = begin(${2:list}); $1 != end($2); ++$1) {
+	${VISUAL}${0}
+}
+endsnippet
+snippet swap "Swap idiom"
+friend void swap(${1:T} & first, $1 & second) {
+	using std::swap;
+	swap(first.${2:x}, second.$2);
+	swap(first.${3:y}, second.$3);
+	swap(first.${4:z}, second.$4);${0}
+}
+endsnippet
+snippet Print
+std::ostream & Print(std::ostream & os) const {
+	${0}
+	return os;
+}
+endsnippet
+snippet << "operator<<"
+std::ostream & operator<< (std::ostream & os, ${1:T} const & ${2:name}) {
+	return $2.Print(os);
+}
+endsnippet

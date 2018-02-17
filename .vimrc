@@ -24,6 +24,7 @@ else
   endif
   call plug#begin('~/.vim/plugged')
 endif
+Plug 'junegunn/vim-plug'
 " ctrlp
 Plug 'kien/ctrlp.vim'
 Plug 'FelikZ/ctrlp-py-matcher'
@@ -35,28 +36,32 @@ Plug 'w0rp/ale'
 " ycmd
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
-
-Plug 'Nemo157/glsl.vim'
-Plug 'junegunn/vim-plug'
-Plug 'majutsushi/tagbar'
+" editing
 Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-git'
-Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
-Plug 'triglav/googletest-syntax'
-Plug 'triglav/vim-colors-tajga'
 Plug 'triglav/vim-visual-increment'
+Plug 'vim-scripts/bufexplorer.zip'
+" programming
+Plug 'Chiel92/vim-autoformat'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'majutsushi/tagbar'
+Plug 'sheerun/vim-polyglot'
+Plug 'skywind3000/asyncrun.vim'
+Plug 'tpope/vim-projectionist'
+Plug 'triglav/googletest-syntax'
+" code-snippets
+Plug 'SirVer/ultisnips'
+" vim
+Plug 'triglav/vim-colors-tajga'
+" airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-jp/cpp-vim'
-Plug 'vim-ruby/vim-ruby'
-Plug 'vim-scripts/bufexplorer.zip'
 call plug#end()
 
 
@@ -755,7 +760,10 @@ let g:airline_theme = 'kalisi'
 
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_key_detailed_diagnostics = '<leader>yd'
+let g:ycm_key_list_select_completion=['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion=['<C-p>', '<Up>']
 nnoremap <leader>yg :YcmGenerateConfig<CR>
+nnoremap <leader>yf :Autoformat<CR>
 let g:ycm_filepath_completion_use_working_dir = 1
 let g:ycm_seed_identifiers_with_syntax = 1
 
