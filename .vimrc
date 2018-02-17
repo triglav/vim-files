@@ -30,6 +30,8 @@ Plug 'FelikZ/ctrlp-py-matcher'
 " git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+" syntax-checking
+Plug 'w0rp/ale'
 " ycmd
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
@@ -741,6 +743,7 @@ if !has('gui_running')
   let g:airline_section_z=''
 endif
 
+let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tagbar#enabled = 0
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline_section_x = airline#section#create(['%n:', 'filetype'])
