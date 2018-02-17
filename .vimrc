@@ -30,9 +30,11 @@ Plug 'FelikZ/ctrlp-py-matcher'
 " git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+" ycmd
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 
 Plug 'Nemo157/glsl.vim'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'junegunn/vim-plug'
 Plug 'majutsushi/tagbar'
 Plug 'mileszs/ack.vim'
@@ -748,10 +750,11 @@ let g:airline_theme = 'kalisi'
 " PLUGIN YouCompleteMe {{{1
 
 
-let g:ycm_key_list_select_completion=['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion=['<C-p>', '<Up>']
-let g:ycm_show_diagnostics_ui = 0
-let g:ycm_extra_conf_globlist = ['./.ycm_extra_conf.py']
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_key_detailed_diagnostics = '<leader>yd'
+nnoremap <leader>yg :YcmGenerateConfig<CR>
+let g:ycm_filepath_completion_use_working_dir = 1
+let g:ycm_seed_identifiers_with_syntax = 1
 
 
 " PLUGIN ctrlp {{{1
