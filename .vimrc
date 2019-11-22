@@ -32,10 +32,10 @@ Plug 'FelikZ/ctrlp-py-matcher'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 " syntax-checking
-Plug 'w0rp/ale'
+"Plug 'w0rp/ale'
 " ycmd
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
+"Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+"Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 " editing
 Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdcommenter'
@@ -48,7 +48,11 @@ Plug 'tpope/vim-vinegar'
 Plug 'triglav/vim-visual-increment'
 Plug 'vim-scripts/bufexplorer.zip'
 " programming
-Plug 'Chiel92/vim-autoformat'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'Chiel92/vim-autoformat'
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'majutsushi/tagbar'
 Plug 'sheerun/vim-polyglot'
@@ -56,7 +60,7 @@ Plug 'skywind3000/asyncrun.vim'
 Plug 'tpope/vim-projectionist'
 Plug 'triglav/googletest-syntax'
 " code-snippets
-Plug 'SirVer/ultisnips'
+"Plug 'SirVer/ultisnips'
 " vim
 Plug 'triglav/vim-colors-tajga'
 " airline
@@ -106,7 +110,7 @@ set number
 " file
 " O message for reading a file overwrites any previous message.
 " I don't give the intro message when starting Vim |:intro|.
-set shortmess=aoOI
+set shortmess=acoOI
 " Splitting a window will put the new window below the current one.
 set splitbelow
 " Splitting a window will put the new window right of the current one.
@@ -682,12 +686,26 @@ nnoremap <Leader>l :set list!<CR>
 " Easy toggle wrap
 nnoremap <Leader>w :set wrap!<CR>
 " Open new tab
-nnoremap <Leader>t <ESC>:tabnew<CR>
+nnoremap <Leader>tt :tabnew<CR>
+nnoremap <Leader>t1 :tabn 1<CR>
+nnoremap <Leader>t2 :tabn 2<CR>
+nnoremap <Leader>t3 :tabn 3<CR>
+nnoremap <Leader>t4 :tabn 4<CR>
+nnoremap <Leader>t5 :tabn 5<CR>
+nnoremap <Leader>t6 :tabn 6<CR>
+nnoremap <Leader>t7 :tabn 7<CR>
+nnoremap <Leader>t8 :tabn 8<CR>
+nnoremap <Leader>t9 :tabn 9<CR>
+nnoremap <Leader>t0 :tabn 10<CR>
+nnoremap <Leader>tn :tabn<CR>
+nnoremap <Leader>tp :tabp<CR>
+nnoremap <Leader>tc :tabc<CR>
 
 " Fugitive commands
 nnoremap <Leader>gd :Gdiff<CR>
 nnoremap <Leader>gb :Gblame<CR>
 nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gl :Glog<CR>
 
 " Diff commands
 nnoremap <Leader>dt :diffthis<CR>
@@ -759,19 +777,6 @@ let g:airline_section_x = airline#section#create(['%n:', 'filetype'])
 let g:airline_theme = 'kalisi'
 
 
-" PLUGIN YouCompleteMe {{{1
-
-
-let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_key_detailed_diagnostics = '<leader>yd'
-let g:ycm_key_list_select_completion=['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion=['<C-p>', '<Up>']
-nnoremap <leader>yg :YcmGenerateConfig<CR>
-nnoremap <leader>yf :Autoformat<CR>
-let g:ycm_filepath_completion_use_working_dir = 1
-let g:ycm_seed_identifiers_with_syntax = 1
-
-
 " PLUGIN ctrlp {{{1
 
 
@@ -803,5 +808,117 @@ if !has('python')
 else
   let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 endif
+
+
+" PLUGIN vim-prettier {{{1
+
+
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+
+
+" PLUGIN coc {{{1
+
+
+" Use tab for trigger completion with characters ahead and navigate.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" Use `[g` and `]g` to navigate diagnostics
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> <C-]> <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" Highlight symbol under cursor on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Remap for rename current word
+nmap <leader>rn <Plug>(coc-rename)
+
+" Remap for format selected region
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+augroup mygroup
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
+
+" Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+" Remap for do codeAction of current line
+nmap <leader>ac  <Plug>(coc-codeaction)
+" Fix autofix problem of current line
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+" Create mappings for function text object, requires document symbols feature of languageserver.
+xmap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap if <Plug>(coc-funcobj-i)
+omap af <Plug>(coc-funcobj-a)
+
+" Use <C-d> for select selections ranges, needs server support, like: coc-tsserver, coc-python
+"nmap <silent> <C-d> <Plug>(coc-range-select)
+"xmap <silent> <C-d> <Plug>(coc-range-select)
+
+" Use `:Format` to format current buffer
+command! -nargs=0 Format :call CocAction('format')
+
+" Use `:Fold` to fold current buffer
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+
+" use `:OR` for organize import of current buffer
+command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+
+" Using CocList
+" Show all diagnostics
+nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
+" Manage extensions
+nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
+" Show commands
+nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
+" Find symbol of current document
+nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
+" Search workspace symbols
+nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
+" Do default action for next item.
+nnoremap <silent> <space>j  :<C-u>CocNext<CR>
+" Do default action for previous item.
+nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
+" Resume latest coc list
+nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 
