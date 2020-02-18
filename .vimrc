@@ -26,8 +26,8 @@ else
 endif
 Plug 'junegunn/vim-plug'
 " ctrlp
-Plug 'kien/ctrlp.vim'
-Plug 'FelikZ/ctrlp-py-matcher'
+"Plug 'kien/ctrlp.vim'
+"Plug 'FelikZ/ctrlp-py-matcher'
 " git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -45,20 +45,42 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-eunuch'
 Plug 'triglav/vim-visual-increment'
 Plug 'vim-scripts/bufexplorer.zip'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'alok/notational-fzf-vim'
 " programming
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" coc extensions
+Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+" Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
+Plug 'iamcco/coc-angular', {'do': 'yarn install --frozen-lockfile'}
+
+Plug 'dag/vim-fish'
+
+" markdown
+Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
+Plug 'leafgarland/typescript-vim'
+
 "Plug 'Chiel92/vim-autoformat'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'majutsushi/tagbar'
-Plug 'sheerun/vim-polyglot'
+"Plug 'sheerun/vim-polyglot'
+Plug 'HerringtonDarkholme/yats.vim'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'tpope/vim-projectionist'
 Plug 'triglav/googletest-syntax'
+Plug 'chr4/nginx.vim'
 " code-snippets
 "Plug 'SirVer/ultisnips'
 " vim
@@ -274,6 +296,13 @@ elseif &term =~ "xterm"
   let &g:t_Co=256
 endif
 
+" vim hardcodes background color erase even if the terminfo file does
+" not contain bce (not to mention that libvte based terminals
+" incorrectly contain bce in their terminfo files). This causes
+" incorrect background rendering when using a color theme with a
+" background color.
+let &t_ut=''
+
 " Enable syntax highlighting.
 syntax on
 " Load color scheme.
@@ -297,6 +326,8 @@ set cinoptions=:0g0U1N-sj1l1
 " - When a form feed character is encountered, continue printing of the current
 "   line at the beginning of the first line on a new page.
 set printoptions=paper:a4,wrap:y,syntax:n,formfeed:y
+
+set spelllang=en_gb
 
 
 " FILE {{{1
@@ -439,6 +470,10 @@ if has('win32')
   set shellxquote=
   " Flag passed to the shell to execute "!" and ":!" commands.
   set shellcmdflag=/c
+endif
+
+if &shell =~# 'fish$'
+  set shell=sh
 endif
 
 
@@ -683,6 +718,8 @@ nnoremap <Leader>m :BufExplorer<CR>
 nmap <Leader>cd :cd %:p:h<CR>
 " Easy toggle list
 nnoremap <Leader>l :set list!<CR>
+" Easy toggle spell
+nnoremap <Leader>s :set spell!<CR>
 " Easy toggle wrap
 nnoremap <Leader>w :set wrap!<CR>
 " Open new tab
@@ -762,17 +799,18 @@ endif
 let g:airline_detect_modified = 1
 let g:airline_detect_paste = 1
 let g:airline_inactive_collapse = 1
-let g:airline_powerline_fonts = has('gui_running')
+let g:airline_powerline_fonts = 1
 
-if !has('gui_running')
-  let g:airline_left_sep=''
-  let g:airline_right_sep=''
-  let g:airline_section_z=''
-endif
+"if !has('gui_running')
+  "let g:airline_left_sep=''
+  "let g:airline_right_sep=''
+  "let g:airline_section_z=''
+"endif
 
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tagbar#enabled = 0
 let g:airline#extensions#whitespace#enabled = 0
+let g:airline#extensions#branch#enabled = 0
 let g:airline_section_x = airline#section#create(['%n:', 'filetype'])
 let g:airline_theme = 'kalisi'
 
@@ -780,34 +818,35 @@ let g:airline_theme = 'kalisi'
 " PLUGIN ctrlp {{{1
 
 
-" Set delay to prevent extra search
-let g:ctrlp_lazy_update = 350
-" Enable cross-sessions caching by not clearing the cache files upon exiting Vim
-let g:ctrlp_clear_cache_on_exit = 0
-" Set no file limit
-let g:ctrlp_max_files = 0
-" Set the directory to store the cache files
-if has('win32')
-  let g:ctrlp_cache_dir = $HOME.'/vimfiles/tmp/ctrlp'
-elseif has('unix')
-  let g:ctrlp_cache_dir = $HOME.'/.vim/tmp/ctrlp'
-endif
+"" Set delay to prevent extra search
+"let g:ctrlp_lazy_update = 350
+"" Enable cross-sessions caching by not clearing the cache files upon exiting Vim
+"let g:ctrlp_clear_cache_on_exit = 0
+"" Set no file limit
+"let g:ctrlp_max_files = 0
+"" Set the directory to store the cache files
+"if has('win32')
+  "let g:ctrlp_cache_dir = $HOME.'/vimfiles/tmp/ctrlp'
+"elseif has('unix')
+  "let g:ctrlp_cache_dir = $HOME.'/.vim/tmp/ctrlp'
+"endif
 
-" If ag is available use it as filename list generator instead of 'find'
-if executable("ag")
-  set grepprg=ag\ --nogroup\ --nocolor
-  let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --ignore ''.git'' --ignore ''.DS_Store'' --ignore ''node_modules'' --hidden -g ""'
-else
-  " Use a version control listing command when inside a repository
-  let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files']
-endif
+"" If ag is available use it as filename list generator instead of 'find'
+"if executable("ag")
+  "set grepprg=ag\ --nogroup\ --nocolor
+  "let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --ignore ''.git'' --ignore ''.DS_Store'' --ignore ''node_modules'' --hidden -g ""'
+"else
+  "" Use a version control listing command when inside a repository
+  "let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files']
+"endif
 
-" PyMatcher for CtrlP
-if !has('python')
-  echo 'In order to use pymatcher plugin, you need +python compiled vim'
-else
-  let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
-endif
+"" PyMatcher for CtrlP
+"if !has('python')
+  "echo 'In order to use pymatcher plugin, you need +python compiled vim'
+"else
+  "let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+"endif
+nnoremap <C-p> :Files<CR>
 
 
 " PLUGIN vim-prettier {{{1
@@ -884,6 +923,7 @@ nmap <leader>ac  <Plug>(coc-codeaction)
 " Fix autofix problem of current line
 nmap <leader>qf  <Plug>(coc-fix-current)
 
+
 " Create mappings for function text object, requires document symbols feature of languageserver.
 xmap if <Plug>(coc-funcobj-i)
 xmap af <Plug>(coc-funcobj-a)
@@ -903,17 +943,21 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 " use `:OR` for organize import of current buffer
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
+nmap <leader>qa  :CocAction<cr>
+nmap <leader>qo  :OR<cr>
+nmap <leader>qp  :Prettier<cr>
+
 " Using CocList
 " Show all diagnostics
-nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
+nnoremap <silent> <space>ca  :<C-u>CocList diagnostics<cr>
 " Manage extensions
-nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
+nnoremap <silent> <space>ce  :<C-u>CocList extensions<cr>
 " Show commands
-nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
+nnoremap <silent> <space>cc  :<C-u>CocList commands<cr>
 " Find symbol of current document
-nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
+nnoremap <silent> <space>co  :<C-u>CocList outline<cr>
 " Search workspace symbols
-nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
+nnoremap <silent> <space>cs  :<C-u>CocList -I symbols<cr>
 " Do default action for next item.
 nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 " Do default action for previous item.
@@ -921,4 +965,7 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
+let g:yats_host_keyword = 1
+let g:NERDSpaceDelims = 1
 
+let g:instant_markdown_autostart = 0

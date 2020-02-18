@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/home/msvec/code/online-weather-ng/frontend/src/app/feature-layers'
+let g:netrw_dirhist_5='/home/msvec/code/online-weather-ng/frontend/src/app/feature-layers/egafor'
+let g:netrw_dirhist_4='/home/msvec/code/online-weather-ng/backend/src/geojsons'
+let g:netrw_dirhist_3='/home/msvec/code/online-weather-ng/frontend/src/app/feature-layers'
+let g:netrw_dirhist_2='/home/msvec/code/online-weather-ng/frontend/src/app'
+let g:netrw_dirhist_1='/home/msvec/code/online-weather-ng/frontend/src/app/state'
+let g:netrw_dirhist_0='/home/msvec/code/online-weather-ng/frontend/src/app'
+let g:netrw_dirhist_9='/home/msvec/code/online-weather-ng/frontend/src/app/drawing'
+let g:netrw_dirhist_8='/home/msvec/code/online-weather-ng/frontend/src/app/layers'
+let g:netrw_dirhist_7='/home/msvec/code/online-weather-ng/frontend/src/app/feature-layers'
