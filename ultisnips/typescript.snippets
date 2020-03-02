@@ -1,0 +1,144 @@
+snippet a-component "Angular component snippet" i
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+	selector: '${1:selector}',
+	templateUrl: '${2:feature}.component.html',
+	styleUrls: ['${3:feature}.component.scss']
+})
+export class ${4:Feature}Component implements OnInit {
+
+	constructor() { }
+
+	ngOnInit() { }$0
+
+}
+endsnippet
+snippet a-service "Angular service snippet" i
+import { Injectable } from '@angular/core';
+
+@Injectable()
+export class ${1:ServiceName}Service {
+	$0
+	constructor() { }
+
+}
+endsnippet
+snippet a-pipe "Angular pipe snippet" i
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({
+	name: '${1:name}'
+})
+export class ${2:PipeName}Pipe implements PipeTransform {
+
+	transform(value: any, ...args: any[]): any {
+		$0
+	}
+
+}
+endsnippet
+snippet a-routing "Angular routing file snippet" i
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+
+import { ${1:Name}Component } from './${2:name}.component';
+
+const routes: Routes = [
+	{
+		path: '${3:path}',
+		component: ${4:Name}Component,
+		children: [
+		]
+	}
+];
+
+@NgModule({
+	imports: [RouterModule.forChild(routes)],
+	exports: [RouterModule],
+})
+export class ${6:Name}RoutingModule { }
+
+export const routedComponents = [${7:Name}Component];
+endsnippet
+snippet a-http-get "Angular Http.get snippet" i
+return this.http.get('${1:url}')
+	.map((response: Response) => response.json()$0);
+
+snippet a-subscribe "Angular observable subscribe snippet" i
+this.${1:service}.${2:function}
+	.subscribe(${3:arg} => this.${4:property} = ${5:arg});
+endsnippet
+snippet a-bootstrap "Angular bootstrap snippet" i
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
+import { ${1:App}Module } from './${app}.module';
+
+platformBrowserDynamic().bootstrapModule(${2:App}Module)
+	.then(success => console.log(`Bootstrap success`))
+	.catch(error => console.log(error));
+endsnippet
+snippet a-component-root "Angular App root component snippet" i
+import { Component } from '@angular/core';
+
+@Component({
+	template: \`<router-outlet></router-outlet>\`
+})
+export class ${1:App}Component { }
+endsnippet
+snippet a-module-root "Angular Root Module snippet" i
+import { NgModule } from '@angular/core';
+import { BrowserModule  } from '@angular/platform-browser';
+import { HttpModule } from '@angular/http';
+
+import { ${1:App}Component } from './${2:app}.component';
+import { AppRoutingModule } from './${3:app}.routing';
+
+@NgModule({
+	imports: [
+		BrowserModule,
+		HttpModule,
+
+		AppRoutingModule,
+	],
+	declarations: [${4:App}Component],
+	providers: [/* TODO: Providers go here */],
+	bootstrap: [${5:App}Component],
+})
+export class ${6:App}Module { }
+endsnippet
+snippet a-module "Angular Module snippet" i
+import { NgModule } from '@angular/core';
+
+import { ${1:Name}Component } from './${2:name}.component';
+
+@NgModule({
+	imports: [],
+	exports: [],
+	declarations: [${3:Name}Component],
+	providers: [],
+})
+export class ${4:Name}Module { }
+endsnippet
+snippet a-lazy-module "Angular Lazy Module snippet" i
+import { NgModule } from '@angular/core';
+
+import { routedComponents, ${1:Name}RoutingModule } from './${2:name}-routing.module';
+
+@NgModule({
+	imports: [${3:Name}RoutingModule],
+	declarations: [routedComponents],
+})
+export class ${4:Name}Module { }
+endsnippet
+snippet a-directive "Angular Directive snippet" i
+import { Directive } from '@angular/core';
+
+@Directive({
+	selector: '[${1:name}]'
+})
+export class ${2:Name}Directive {
+
+	constructor() { }
+
+}
