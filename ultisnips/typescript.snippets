@@ -1,27 +1,24 @@
-snippet a-component "Angular component snippet" i
-import { Component, OnInit } from '@angular/core';
+snippet log "Debug logger"
+const log = debug("ibl:${1:`!p snip.rv = ''.join(w.title() for w in re.split('-|\.', snip.basename))`}");
+endsnippet
+snippet component "Angular component snippet"
+import {ChangeDetectionStrategy, Component} from "@angular/core";
 
 @Component({
-	selector: '${1:selector}',
-	templateUrl: '${2:feature}.component.html',
-	styleUrls: ['${3:feature}.component.scss']
+	selector: "ibl-${1:`!p snip.rv = snip.basename.removesuffix('.component') `}",
+	templateUrl: "./$1.component.html",
+	changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ${4:Feature}Component implements OnInit {
-
-	constructor() { }
-
-	ngOnInit() { }$0
-
+export class ${2:`!p snip.rv = ''.join(w.title() for w in re.split('-|\.', snip.basename)) `} {
+	$0
 }
 endsnippet
-snippet a-service "Angular service snippet" i
-import { Injectable } from '@angular/core';
+snippet service "Angular service snippet"
+import {Injectable} from "@angular/core";
 
-@Injectable()
-export class ${1:ServiceName}Service {
+@Injectable({providedIn: "root"})
+export class ${1:`!p snip.rv = ''.join(w.title() for w in re.split('-|\.', snip.basename)) `} {
 	$0
-	constructor() { }
-
 }
 endsnippet
 snippet a-pipe "Angular pipe snippet" i

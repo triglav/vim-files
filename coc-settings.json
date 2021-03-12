@@ -1,3 +1,18 @@
 {
-  "snippets.ultisnips.directories": ["ultisnips"]
+  "snippets.ultisnips.directories": ["ultisnips"],
+  "clangd.semanticHighlighting": true,
+  "clangd.arguments": [
+    "--compile-commands-dir=build",
+    "--clang-tidy",
+    "--header-insertion=iwyu",
+    "--header-insertion-decorators",
+    "--suggest-missing-includes"
+  ],
+  "eslint.filetypes": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "html"
+  ]
 }
