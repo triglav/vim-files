@@ -24,19 +24,25 @@ else
   endif
   call plug#begin('~/.vim/plugged')
 endif
+
+" Plugin manager
 Plug 'junegunn/vim-plug'
-" ctrlp
-Plug 'kien/ctrlp.vim'
+
+" Fuzzy file, buffer, mru, tag, etc finder
+Plug 'ctrlpvim/ctrlp.vim'
+" Fast vim CtrlP matcher based on python
 Plug 'FelikZ/ctrlp-py-matcher'
+
 " git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+
 " syntax-checking
-Plug 'w0rp/ale'
-" ycmd
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
+"Plug 'w0rp/ale'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 " editing
+
 Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'terryma/vim-multiple-cursors'
@@ -46,7 +52,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'triglav/vim-visual-increment'
-Plug 'vim-scripts/bufexplorer.zip'
+Plug 'jlanzarotta/bufexplorer'
 " programming
 Plug 'Chiel92/vim-autoformat'
 Plug 'editorconfig/editorconfig-vim'
@@ -725,6 +731,15 @@ cnoreabbrev Qa qa
 cnoreabbrev QA qa
 cnoreabbrev Wa wa
 cnoreabbrev WA wa
+
+
+" PLUGIN asyncrun.vim {{{1
+
+
+command! -bang -nargs=* -complete=file Make AsyncRun -program=make @ <args>
+
+let g:asyncrun_status = ''
+let g:airline_section_error = airline#section#create_right(['%{g:asyncrun_status}'])
 
 
 " PLUGIN Tagbar {{{1
