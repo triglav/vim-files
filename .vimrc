@@ -243,11 +243,22 @@ set define=^\(#\s*define\|[a-z]*\s*const\s*[a-z]*\)
 
 " SYNTAX {{{1
 
-
+" Enable true color in terminal
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
 " use 256 colors in xterm
-if &term =~ "xterm"
+elseif &term =~ "xterm"
   let &g:t_Co=256
 endif
+
+" vim hardcodes background color erase even if the terminfo file does
+" not contain bce (not to mention that libvte based terminals
+" incorrectly contain bce in their terminfo files). This causes
+" incorrect background rendering when using a color theme with a
+" background color.
+let &t_ut=''
 
 " Enable syntax highlighting.
 syntax on
