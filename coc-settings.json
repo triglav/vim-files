@@ -1,0 +1,13 @@
+{
+  "languageserver": {
+    "cquery": {
+      "command": "C:\\code\\cquery\\build\\Release\\bin\\cquery",
+      "args": ["--log-file=C:\\Users\\matej\\AppData\\Local\\Temp\\cq.log"],
+      "filetypes": ["c", "cpp"],
+      "rootPatterns": ["compile_flags.txt", "compile_commands.json", ".vim/", ".git/", ".hg/"],
+      "initializationOptions": {
+        "cacheDirectory": "/tmp/cquery"
+      }
+    }
+  }
+}
