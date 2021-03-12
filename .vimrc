@@ -390,9 +390,13 @@ if has('win32')
   " Name of the shell to use for ! and :! commands.
   "set shell=c:\cygwin\bin\bash.exe\ --login
   let &g:shell=$COMSPEC
-  " Always use the shell.
-  " Use "shell 'shellcmdflag' cmd" to start external commands.
-  set shelltype=0
+
+  if !has("nvim")
+    " Always use the shell.
+    " Use "shell 'shellcmdflag' cmd" to start external commands.
+    set shelltype=0
+  endif
+
   " String to be used to put the output of the ":make" command in the error
   " file.
   "set shellpipe=2>&1>
@@ -444,10 +448,12 @@ elseif has('unix')
 endif
 " After typing this many characters the swap file will be written to disk.
 set updatecount=50
-" Maximum amount of memory (in Kbyte) to use for one buffer.
-set maxmem=2048
-" Maximum amount of memory (in Kbyte) to use for all buffers together.
-set maxmemtot=10240
+if !has('nvim')
+  " Maximum amount of memory (in Kbyte) to use for one buffer.
+  set maxmem=2048
+  " Maximum amount of memory (in Kbyte) to use for all buffers together.
+  set maxmemtot=10240
+endif
 
 if has("persistent_undo")
   " List of directory names for undo files, separated with commas.
