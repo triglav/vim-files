@@ -24,24 +24,30 @@ else
   endif
   call plug#begin('~/.vim/plugged')
 endif
-Plug 'Nemo157/glsl.vim'
-Plug 'junegunn/vim-plug'
-Plug 'scrooloose/nerdcommenter'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-git'
-Plug 'tpope/vim-projectionist'
-Plug 'tpope/vim-repeat'
+
+" Editing
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-vinegar'
-Plug 'triglav/googletest-syntax'
+
 Plug 'triglav/vim-colors-tajga'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+
+" Filetypes
+Plug 'Nemo157/glsl.vim'
+Plug 'tpope/vim-git'
+Plug 'triglav/googletest-syntax'
 Plug 'vim-jp/cpp-vim'
 Plug 'vim-ruby/vim-ruby'
+
+" Features
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-projectionist'
+
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 
