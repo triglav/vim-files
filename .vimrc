@@ -38,7 +38,6 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'triglav/googletest-syntax'
 Plug 'triglav/vim-colors-tajga'
-Plug 'triglav/vim-visual-increment'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-jp/cpp-vim'
@@ -560,10 +559,14 @@ vnoremap <silent> <s-tab> <gv
 vnoremap <silent> > >gv
 vnoremap <silent> < <gv
 
+" Emulate the original behaviour/bindings of 'triglav/vim-visual-increment'
+vnoremap <C-a> g<C-a>
+vnoremap <C-x> g<C-x>
+vnoremap g<C-a> <C-a>
+vnoremap g<C-x> <C-x>
+
 " Set CTRL+C, CTRL+X, CTRL+V for non-mac systems (Taken from mswin.vim)
 if !has('mac')
-  " CTRL-X is Cut
-  vnoremap <C-X> "+x
   " CTRL-C and CTRL-Insert are Copy
   vnoremap <C-C> "+y
   " CTRL-V and SHIFT-Insert are Paste
