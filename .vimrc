@@ -431,9 +431,10 @@ set autowrite
 " asking if you wish to save the current file(s).
 set confirm
 
-" Make a backup before overwriting a file.  Leave it around after the file has
-" been successfully written.
-set backup
+" Do not make a backup before overwriting a file.  Leave it around after the
+" file has been successfully written.
+set nobackup
+set nowritebackup
 " Use a swapfile for the buffer.
 set swapfile
 " List of directory names for the backup & swap files, separated with commas.
