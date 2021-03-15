@@ -26,7 +26,6 @@ else
 endif
 Plug 'Nemo157/glsl.vim'
 Plug 'junegunn/vim-plug'
-Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdcommenter'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-endwise'
@@ -672,23 +671,6 @@ cnoreabbrev Wa wa
 cnoreabbrev WA wa
 
 
-" PLUGIN Tagbar {{{1
-
-
-let g:tagbar_autoclose = 1
-let g:tagbar_left = 1
-nnoremap <silent> <F12> :TagbarToggle<CR>
-map <C-F12> :silent !ctags -R --c++-kinds=+p --fields=+iaSl --extra=+q .<CR>
-
-if has('win32')
-  set tags+=$HOME/vimfiles/tags/cpp
-  set tags+=$HOME/vimfiles/tags/sdl
-elseif has('unix')
-  set tags+=$HOME/.vim/tags/cpp
-  set tags+=$HOME/.vim/tags/sdl
-endif
-
-
 " PLUGIN vim-airline {{{1
 
 
@@ -698,7 +680,6 @@ let g:airline_inactive_collapse = 1
 let g:airline_powerline_fonts = 1
 
 let g:airline#extensions#hunks#enabled = 0
-let g:airline#extensions#tagbar#enabled = 0
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#branch#enabled = 0
 let g:airline_section_x = airline#section#create(['%n:', 'filetype'])
