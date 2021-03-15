@@ -54,8 +54,6 @@ call plug#end()
 " PERSONAL (MODIFY THIS) {{{1
 
 
-" Tab size
-let g:tab_size = 2
 " Leader mappings
 let g:mapleader = ","
 let g:maplocalleader = ";"
@@ -334,9 +332,9 @@ set nojoinspaces
 " Use the appropriate number of spaces to insert a <Tab>.
 set expandtab
 " Number of spaces that a <Tab> in the file counts for.
-let &g:tabstop=g:tab_size
+set tabstop=2
 " Number of spaces to use for each step of (auto)indent.
-let &g:shiftwidth=g:tab_size
+set shiftwidth=2
 " Round indent to multiple of 'shiftwidth'.  Applies to > and < commands.
 set shiftround
 
