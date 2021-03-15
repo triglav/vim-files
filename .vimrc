@@ -56,8 +56,6 @@ call plug#end()
 " Leader mappings
 let g:mapleader = ","
 let g:maplocalleader = ";"
-" Author that shows up in some of the snippets
-let g:snips_author = 'Triglav <trojhlav@gmail.com>'
 
 " INTERFACE {{{1
 
