@@ -195,7 +195,7 @@ set nolazyredraw
 
 " A history of ":" commands, and a history of previous search patterns are
 " remembered.
-set history=50
+set history=1000
 
 
 " If in Insert, Replace or Visual mode put a message on the last line.
