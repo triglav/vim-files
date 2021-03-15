@@ -589,58 +589,20 @@ if !has('mac')
 endif
 
 " Keys for switching between tabs in normal mode.
-if has('mac')
-  map <D-1> :tabn 1<CR>
-  map <D-2> :tabn 2<CR>
-  map <D-3> :tabn 3<CR>
-  map <D-4> :tabn 4<CR>
-  map <D-5> :tabn 5<CR>
-  map <D-6> :tabn 6<CR>
-  map <D-7> :tabn 7<CR>
-  map <D-8> :tabn 8<CR>
-  map <D-9> :tabn 9<CR>
-  map <D-0> :tabn 10<CR>
-else
-  map <A-1> :tabn 1<CR>
-  map <A-2> :tabn 2<CR>
-  map <A-3> :tabn 3<CR>
-  map <A-4> :tabn 4<CR>
-  map <A-5> :tabn 5<CR>
-  map <A-6> :tabn 6<CR>
-  map <A-7> :tabn 7<CR>
-  map <A-8> :tabn 8<CR>
-  map <A-9> :tabn 9<CR>
-  map <A-0> :tabn 10<CR>
-endif
-map <C-Tab> :tabn<CR>
-map <S-C-Tab> :tabp<CR>
-
-" Keys for switching between tabs in insert mode.
-if has('mac')
-  imap <D-1> <Esc>:tabn 1<CR>
-  imap <D-2> <Esc>:tabn 2<CR>
-  imap <D-3> <Esc>:tabn 3<CR>
-  imap <D-4> <Esc>:tabn 4<CR>
-  imap <D-5> <Esc>:tabn 5<CR>
-  imap <D-6> <Esc>:tabn 6<CR>
-  imap <D-7> <Esc>:tabn 7<CR>
-  imap <D-8> <Esc>:tabn 8<CR>
-  imap <D-9> <Esc>:tabn 9<CR>
-  imap <D-0> <Esc>:tabn 10<CR>
-else
-  imap <A-1> <Esc>:tabn 1<CR>
-  imap <A-2> <Esc>:tabn 2<CR>
-  imap <A-3> <Esc>:tabn 3<CR>
-  imap <A-4> <Esc>:tabn 4<CR>
-  imap <A-5> <Esc>:tabn 5<CR>
-  imap <A-6> <Esc>:tabn 6<CR>
-  imap <A-7> <Esc>:tabn 7<CR>
-  imap <A-8> <Esc>:tabn 8<CR>
-  imap <A-9> <Esc>:tabn 9<CR>
-  imap <A-0> <Esc>:tabn 10<CR>
-endif
-imap <C-Tab> <Esc>:tabn<CR>
-imap <S-C-Tab> <Esc>:tabp<CR>
+nnoremap <Leader>tt :tabnew<CR>
+nnoremap <Leader>t1 :tabn 1<CR>
+nnoremap <Leader>t2 :tabn 2<CR>
+nnoremap <Leader>t3 :tabn 3<CR>
+nnoremap <Leader>t4 :tabn 4<CR>
+nnoremap <Leader>t5 :tabn 5<CR>
+nnoremap <Leader>t6 :tabn 6<CR>
+nnoremap <Leader>t7 :tabn 7<CR>
+nnoremap <Leader>t8 :tabn 8<CR>
+nnoremap <Leader>t9 :tabn 9<CR>
+nnoremap <Leader>t0 :tabn 10<CR>
+nnoremap <Leader>tn :tabn<CR>
+nnoremap <Leader>tp :tabp<CR>
+nnoremap <Leader>tc :tabc<CR>
 
 " Easily resize split windows with Ctrl+hjkl
 nnoremap <C-j> <C-w>+
@@ -681,8 +643,6 @@ nmap <Leader>cd :cd %:p:h<CR>
 nnoremap <Leader>l :set list!<CR>
 " Easy toggle wrap
 nnoremap <Leader>w :set wrap!<CR>
-" Open new tab
-nnoremap <Leader>t <ESC>:tabnew<CR>
 
 " Fugitive commands
 nnoremap <Leader>gd :Gdiff<CR>
