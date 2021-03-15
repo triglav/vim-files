@@ -270,6 +270,8 @@ set cinoptions=:0g0U1N-sj1l1
 "   line at the beginning of the first line on a new page.
 set printoptions=paper:a4,wrap:y,syntax:n,formfeed:y
 
+set spelllang=en_gb
+
 
 " FILE {{{1
 
