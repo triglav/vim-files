@@ -48,7 +48,6 @@ Plug 'vim-jp/cpp-vim'
 Plug 'vim-ruby/vim-ruby'
 
 " Features
-Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-eunuch'
