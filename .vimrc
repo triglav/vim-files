@@ -34,7 +34,11 @@ Plug 'tpope/vim-unimpaired'
 Plug 'triglav/vim-colors-tajga'
 
 " Filetypes
-Plug 'Nemo157/glsl.vim'
+Plug 'chr4/nginx.vim'
+Plug 'jeroenbourgois/vim-actionscript'
+Plug 'jparise/vim-graphql'
+Plug 'leafgarland/typescript-vim'
+Plug 'tikhomirov/vim-glsl'
 Plug 'tpope/vim-git'
 Plug 'triglav/googletest-syntax'
 Plug 'vim-jp/cpp-vim'
