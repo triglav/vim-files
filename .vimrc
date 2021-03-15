@@ -29,7 +29,6 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'junegunn/vim-plug'
 Plug 'kien/ctrlp.vim'
 Plug 'majutsushi/tagbar'
-Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-endwise'
@@ -59,10 +58,6 @@ let g:mapleader = ","
 let g:maplocalleader = ";"
 " Author that shows up in some of the snippets
 let g:snips_author = 'Triglav <trojhlav@gmail.com>'
-" Path to the windows ack location
-if has('win32')
-  let g:ackprg=$PERLDIR.'\perl.exe '.$PERLDIR.'\ack-grep'
-end
 
 " INTERFACE {{{1
 
