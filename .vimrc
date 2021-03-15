@@ -59,6 +59,7 @@ Plug 'skywind3000/asyncrun.vim'
 
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'alok/notational-fzf-vim'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -889,4 +890,10 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <leader>cp  :<C-u>CocListResume<CR>
 
+
+" PLUGIN notational-fzf-vim {{{1
+
+
+let g:nv_search_paths = ['~/Documents/Notes', './README.md']
+nnoremap <leader>n :NV<CR>
 
