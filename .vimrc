@@ -50,14 +50,9 @@ Plug 'vim-scripts/bufexplorer.zip'
 call plug#end()
 
 
-" PERSONAL (MODIFY THIS) {{{1
-
-
-" Leader mappings
-let g:mapleader = ","
-let g:maplocalleader = ";"
-
 " INTERFACE {{{1
+
+
 
 
 " The last window will always have a status line.
@@ -543,6 +538,10 @@ endif
 
 " CUSTOM KEY REMAPPING {{{1
 
+
+" Leader mappings
+let g:mapleader = ","
+let g:maplocalleader = ";"
 
 " Remove the annoying F1 help bind
 nnoremap <F1> <Esc>
