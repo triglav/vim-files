@@ -55,6 +55,10 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-projectionist'
 
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
@@ -702,5 +706,14 @@ let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#branch#enabled = 0
 let g:airline_section_x = airline#section#create(['%n:', 'filetype'])
 let g:airline_theme = 'kalisi'
+
+
+" PLUGIN vim-prettier {{{1
+
+
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+
+nmap <leader>qp  :Prettier<cr>
 
 
