@@ -25,7 +25,6 @@ else
   call plug#begin('~/.vim/plugged')
 endif
 Plug 'Nemo157/glsl.vim'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'junegunn/vim-plug'
 Plug 'kien/ctrlp.vim'
 Plug 'majutsushi/tagbar'
@@ -707,15 +706,6 @@ let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#branch#enabled = 0
 let g:airline_section_x = airline#section#create(['%n:', 'filetype'])
 let g:airline_theme = 'kalisi'
-
-
-" PLUGIN YouCompleteMe {{{1
-
-
-let g:ycm_key_list_select_completion=['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion=['<C-p>', '<Up>']
-let g:ycm_show_diagnostics_ui = 0
-let g:ycm_extra_conf_globlist = ['./.ycm_extra_conf.py']
 
 
 " PLUGIN ctrlp {{{1
