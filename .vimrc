@@ -633,6 +633,8 @@ nnoremap <Leader>m :BufExplorer<CR>
 nmap <Leader>cd :cd %:p:h<CR>
 " Easy toggle list
 nnoremap <Leader>l :set list!<CR>
+" Easy toggle spell
+nnoremap <Leader>s :set spell!<CR>
 " Easy toggle wrap
 nnoremap <Leader>w :set wrap!<CR>
 
