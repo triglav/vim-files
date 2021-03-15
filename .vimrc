@@ -1,5 +1,5 @@
 " Vim 'vimrc' file
-" Maintainer:   Triglav <trojhlav@gmail.com>
+" Maintainer: Matej Svec <matej@msvec.sk>
 
 version 8.0
 
