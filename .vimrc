@@ -57,6 +57,9 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'skywind3000/asyncrun.vim'
 
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
@@ -644,6 +647,9 @@ if has('unix')
   cmap w!! %!sudo tee > /dev/null %
 endif
 
+nnoremap <C-p> :GFiles<CR>
+nnoremap <Leader>f :Rg<CR>
+nnoremap <Leader>m :Buffers<CR>
 
 " Strip all trailing whitespace in the current file.
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
