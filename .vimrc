@@ -53,6 +53,9 @@ Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-projectionist'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'skywind3000/asyncrun.vim'
 
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
@@ -333,6 +336,8 @@ set notimeout
 set nottimeout
 " Insert only one space after a '.', '?' and '!' with a join command.
 set nojoinspaces
+" Used by gitgutter
+set updatetime=100
 
 " Use the appropriate number of spaces to insert a <Tab>.
 set expandtab
