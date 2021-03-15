@@ -477,16 +477,21 @@ if has("persistent_undo")
   set undofile
 endif
 
+" "folds"     manually created folds, opened/closed folds and local fold options
+" "cursor"    cursor position in file and in window
+" "curdir"    local current directory, if set with |:lcd|
+set viewoptions=folds,cursor,curdir
+
 " Changes the effect of the |:mksession| command.
 " "blank"     empty windows
+" "buffers"   hidden and unloaded buffers, not just those in windows
 " "curdir"    the current directory
 " "folds"     manually created folds, opened/closed folds and local fold options
 " "help"      the help window
-" "options"   all options and mappings (also global values for local options)
 " "tabpages"  all tab pages; without this only the current tab page is restored,
 "             so that you can make a session for each tab page separately
 " "winsize"   window sizes
-set sessionoptions=blank,curdir,folds,globals,help,options,tabpages,winsize
+set sessionoptions=blank,buffers,curdir,folds,help,tabpages,winsize
 
 
 " PATH {{{1
