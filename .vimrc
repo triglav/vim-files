@@ -61,6 +61,8 @@ Plug 'prettier/vim-prettier', {
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
+Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown'}
 call plug#end()
 
 
@@ -715,5 +717,13 @@ let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
 nmap <leader>qp  :Prettier<cr>
+
+
+" PLUGIN vim-instant-markdown {{{1
+
+
+let g:instant_markdown_autostart = 0
+nmap <leader>Mp :InstantMarkdownPreview<cr>
+nmap <leader>Mo :InstantMarkdownStop<cr>
 
 
