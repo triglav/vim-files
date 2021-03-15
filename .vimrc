@@ -353,7 +353,8 @@ set autoindent
 " n - When formatting text, recognize numbered lists.
 " 2 - When formatting text, use the indent of the second line of a paragraph
 "     for the rest of the paragraph, instead of the indent of the first line.
-set formatoptions=tcroqn2
+" j - Where it makes sense, remove a comment leader when joining lines.
+set formatoptions=tcroqn2j
 
 " As much as possible of the last line in a window will be displayed.
 set display=lastline
