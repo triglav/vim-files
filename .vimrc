@@ -44,7 +44,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-jp/cpp-vim'
 Plug 'vim-ruby/vim-ruby'
-Plug 'vim-scripts/bufexplorer.zip'
 call plug#end()
 
 
@@ -626,8 +625,6 @@ nnoremap <leader>v `[v`]
 nnoremap <leader>V `[V`]
 " Force redraw.
 nnoremap <Leader>r :redraw!<CR>
-" Open bufexplorer.
-nnoremap <Leader>m :BufExplorer<CR>
 " Easily change directory to the file being edited.
 nmap <Leader>cd :cd %:p:h<CR>
 " Easy toggle list
