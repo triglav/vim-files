@@ -30,6 +30,9 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-apathy'
+Plug 'tpope/vim-sleuth'
 
 Plug 'triglav/vim-colors-tajga'
 
@@ -48,6 +51,8 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-projectionist'
 
 Plug 'vim-airline/vim-airline'
