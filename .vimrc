@@ -642,6 +642,7 @@ nnoremap <Leader>w :set wrap!<CR>
 nnoremap <Leader>gd :Gdiff<CR>
 nnoremap <Leader>gb :Gblame<CR>
 nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gl :Glog<CR>
 
 " Diff commands
 nnoremap <Leader>dt :diffthis<CR>
