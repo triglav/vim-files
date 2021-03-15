@@ -34,7 +34,7 @@ Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-apathy'
 Plug 'tpope/vim-sleuth'
 
-Plug 'triglav/vim-colors-tajga'
+Plug 'morhetz/gruvbox'
 
 " Filetypes
 Plug 'chr4/nginx.vim'
@@ -274,7 +274,9 @@ let &t_ut=''
 syntax on
 " Load color scheme.
 set background=dark
-colorscheme tajga
+let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_invert_signs = 1
+colorscheme gruvbox
 
 " The 'cinoptions' affect the way 'cindent' reindents lines in a C program.
 " :0    - place case labels 0 characters from the indent of the switch()
@@ -720,7 +722,7 @@ let g:airline#extensions#hunks#enabled = 0
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#branch#enabled = 0
 let g:airline_section_x = airline#section#create(['%n:', 'filetype'])
-let g:airline_theme = 'kalisi'
+let g:airline_theme = 'gruvbox'
 
 
 " PLUGIN vim-prettier {{{1
