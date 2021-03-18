@@ -652,7 +652,7 @@ if has('unix')
   cmap w!! %!sudo tee > /dev/null %
 endif
 
-nnoremap <C-p> :GFiles<CR>
+nnoremap <C-p> :GFiles --exclude-standard --others --cached<CR>
 nnoremap <Leader>f :Rg<CR>
 nnoremap <Leader>m :Buffers<CR>
 
