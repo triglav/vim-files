@@ -674,7 +674,7 @@ nnoremap <Leader>w :set wrap!<CR>
 
 " Fugitive commands
 nnoremap <Leader>gd :Gdiff<CR>
-nnoremap <Leader>gb :Gblame<CR>
+nnoremap <Leader>gb :G blame<CR>
 nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gl :Glog<CR>
 
