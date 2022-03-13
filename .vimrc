@@ -653,6 +653,7 @@ if has('unix')
 endif
 
 nnoremap <C-p> :GFiles --exclude-standard --others --cached<CR>
+nnoremap <C-g> :GFiles?<CR>
 nnoremap <Leader>f :Rg<CR>
 nnoremap <Leader>m :Buffers<CR>
 
