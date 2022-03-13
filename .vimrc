@@ -63,10 +63,6 @@ Plug 'alok/notational-fzf-vim'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
-
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
@@ -757,15 +753,6 @@ let g:airline#extensions#tabline#show_close_button = 0
 let g:airline_theme = 'gruvbox'
 
 
-" PLUGIN vim-prettier {{{1
-
-
-let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
-
-nmap <leader>qp  :Prettier<cr>
-
-
 " PLUGIN vim-instant-markdown {{{1
 
 
@@ -843,8 +830,9 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code.
-" xmap <leader>f  <Plug>(coc-format-selected)
-" nmap <leader>f  <Plug>(coc-format-selected)
+xmap <leader>F  <Plug>(coc-format-selected)
+nmap <leader>F  <Plug>(coc-format-selected)
+nmap <leader>qp  <Plug>(coc-format)
 
 augroup mygroup
   autocmd!
