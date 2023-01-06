@@ -46,6 +46,7 @@ Plug 'tpope/vim-git'
 Plug 'triglav/googletest-syntax'
 Plug 'vim-jp/cpp-vim'
 Plug 'vim-ruby/vim-ruby'
+Plug 'habamax/vim-godot'
 
 " Features
 Plug 'tpope/vim-dispatch'
