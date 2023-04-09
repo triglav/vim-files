@@ -64,5 +64,5 @@ vim.keymap.set('n', '<Leader>w', '<Cmd>set wrap!<CR>')
 
 -- Diff commands
 vim.keymap.set('n', '<Leader>dt', '<Cmd>diffthis<CR>')
-vim.keymap.set('n', '<Leader>do', '<Cmd>diffoff<CR>')
+vim.keymap.set('n', '<Leader>do', '<Cmd>diffoff!<CR>')
 vim.keymap.set('n', '<Leader>du', '<Cmd>diffupdate<CR>')
