@@ -82,8 +82,8 @@ vim.o.updatetime = 100
 -- Vim will wait until either the complete mapping or key sequence has been
 -- received, or it is clear that there is no mapping or key sequence for the
 -- received characters.
-vim.o.timeout = false
-vim.o.ttimeout = false
+vim.o.timeout = true
+vim.o.timeoutlen = 300
 
 -- Show filler lines and as vertical splits
 -- vim.o.diffopt = 'filler,vertical'
